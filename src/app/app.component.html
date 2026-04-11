@@ -1,5 +1,25 @@
-<div *ngFor="let certificado of certificados"></div>
-  <img width="200" [src]="certificados.img" alt="" />
-  <h2>{{ certificados.description }}</h2>
-  <P>{{ certificados.plataforma }}</P>
+
+<div id="particle-container"></div>
+
+<div class="content">
+    <app-navbar></app-navbar>
+    <div id="about">
+      <app-about></app-about>
+    </div>
+
+    <div id="technologies">
+      <app-technologies></app-technologies>
+    </div>
+
+    <div id="certificates">
+      <app-certificates></app-certificates>
+    </div>
+
+    <div id="projects">
+      <app-projects></app-projects>
+    </div>
+    <div id="experience">
+      <app-experience></app-experience>
+    </div>
 </div>
+

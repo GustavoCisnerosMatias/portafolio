@@ -1,0 +1,90 @@
+/* caja de certificados */
+
+.container {
+  background-color: #ffff;
+  margin-top: 30px;
+  margin: 5%;
+  border-radius: 10px;
+  border: 5px solid aqua;
+  max-width: 100%;
+}
+
+.container .Parrafo {
+  margin-left: 0;
+  padding: 0.3em;
+  font-size: 2.2em;
+}
+
+.Icon {
+  padding: 0.3em;
+  font-size: 2.2em;
+  margin-left: 70px;
+}
+
+.productos-container {
+  margin: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.producto {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #191c32;
+}
+
+.producto img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.info {
+  padding: 15px;
+}
+
+.info h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: aqua;
+  text-align: center;
+}
+
+.info p {
+  font-size: 14px;
+  color: #e1e1e1;
+}
+
+.seccion {
+  margin-bottom: 30px;
+  background-color: #ffff;
+  border-radius: 10px;
+}
+@media (max-width: 480px) {
+  .centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .Icon {
+    margin: 10px 0;
+  }
+  .seccion {
+    align-items: stretch;
+  }
+
+  .productos-container {
+    align-items: center;
+  }
+
+  .producto {
+    flex: 1 0 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
+    margin-bottom: 20px;
+  }
+}

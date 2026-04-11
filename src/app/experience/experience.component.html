@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="seccion">
+    <div class="centered-container">
+      <h3 class="Icon">
+        <fa-icon [icon]="faPeopleGroup"></fa-icon> Experience
+      </h3>
+    </div>
+
+    <div class="productos-container">
+      <div *ngFor="let experience of experiences" class="producto">
+        <div class="info">
+          <h2>{{ experience.title }}</h2>
+        </div>
+
+        <div class="carousel-container" *ngIf="experience.slides.length > 0">
+          <p class="slide-desc">
+            {{ experience.slides[currentSlide[experience.id]]?.description }}
+          </p>
+          <video
+            *ngIf="experience.slides[currentSlide[experience.id]]?.isVideo"
+            [src]="experience.slides[currentSlide[experience.id]]?.img"
+            controls
+            class="carousel-media"
+          ></video>
+          <img
+            *ngIf="!experience.slides[currentSlide[experience.id]]?.isVideo"
+            [src]="experience.slides[currentSlide[experience.id]]?.img"
+            alt="slide"
+          />
+
+          <div class="carousel-controls">
+            <button
+              (click)="prevSlide(experience.id, experience.slides.length)"
+            >
+              ◀
+            </button>
+            <span>
+              {{ currentSlide[experience.id] + 1 }}/{{
+                experience.slides.length
+              }}
+            </span>
+            <button
+              (click)="nextSlide(experience.id, experience.slides.length)"
+            >
+              ▶
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="brand">
+    <h2><span>G</span>C</h2>
+  </div>
+
+  <!-- Menú -->
+  <ul class="menu" [ngClass]="{'active': menuOpen}">
+    <li><a (click)="scrollToElement('about')">About</a></li>
+    <li><a (click)="scrollToElement('technologies')">Technologies</a></li>
+    <li><a (click)="scrollToElement('certificates')">Certificates</a></li>
+    <li><a (click)="scrollToElement('projects')">Projects</a></li>
+    <li><a (click)="scrollToElement('experience')">Experience</a></li>
+  </ul>
+
+  <!-- Botón de menú (Hamburguesa) -->
+  <button class="menu-btn" (click)="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</nav>

@@ -1,0 +1,70 @@
+.container {
+  background-color: #ffff;
+  margin-top: 30px;
+  margin: 5%;
+  border-radius: 10px;
+  border: 5px solid aqua;
+  max-width: 100%;
+}
+.container .Parrafo {
+  margin-left: 0;
+  padding: 0.3em;
+  font-size: 2.2em;
+}
+
+.Icon {
+  padding: 0.3em;
+  font-size: 2.2em;
+  margin-left: 70px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 8px;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  padding: 1.3em;
+  font-size: 1.2em;
+  position: relative;
+}
+
+li img {
+  width: 50px;
+  margin: 0 auto;
+}
+img:hover {
+  background-color: #27817e;
+  transition: ease-in 0.4s;
+}
+.description {
+  display: none; /* Inicialmente oculta la descripción */
+  position: absolute; /* Coloca la descripción encima de la imagen */
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro transparente */
+  color: white; /* Texto blanco */
+  padding: 5px; /* Espacio interior */
+  border-radius: 5px; /* Bordes redondeados */
+  bottom: 100%; /* Coloca la descripción encima de la imagen */
+  left: 50%; /* Centra horizontalmente la descripción */
+  transform: translateX(-50%); /* Centra horizontalmente la descripción */
+}
+
+li:hover .description {
+  display: block; /* Muestra la descripción cuando se pasa el cursor sobre el elemento li */
+}
+@media (max-width: 480px) {
+  .centered-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .Icon {
+    margin: 10px 0;
+  }
+}
