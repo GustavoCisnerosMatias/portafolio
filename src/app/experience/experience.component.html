@@ -16,17 +16,20 @@
           <p class="slide-desc">
             {{ experience.slides[currentSlide[experience.id]]?.description }}
           </p>
-          <video
-            *ngIf="experience.slides[currentSlide[experience.id]]?.isVideo"
-            [src]="experience.slides[currentSlide[experience.id]]?.img"
-            controls
-            class="carousel-media"
-          ></video>
-          <img
-            *ngIf="!experience.slides[currentSlide[experience.id]]?.isVideo"
-            [src]="experience.slides[currentSlide[experience.id]]?.img"
-            alt="slide"
-          />
+          <div class="media-wrapper">
+            <video
+              *ngIf="experience.slides[currentSlide[experience.id]]?.isVideo"
+              [src]="experience.slides[currentSlide[experience.id]]?.img"
+              controls
+              class="carousel-media"
+            ></video>
+            <img
+              *ngIf="!experience.slides[currentSlide[experience.id]]?.isVideo"
+              [src]="experience.slides[currentSlide[experience.id]]?.img"
+              alt="slide"
+              class="carousel-img"
+            />
+          </div>
 
           <div class="carousel-controls">
             <button

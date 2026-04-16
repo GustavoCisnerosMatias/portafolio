@@ -1,18 +1,24 @@
-/* caja de certificados */
-
-.container {
-  background-color: #ffff;
-  margin-top: 30px;
+/* ── Wrapper exterior: solo espaciado, sin fondo ── */
+.categorias-wrapper {
   margin: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ── Cada categoría: contenedor blanco con borde aqua (estilo antiguo) ── */
+.categoria-seccion {
+  background-color: #ffff;
   border-radius: 10px;
   border: 5px solid aqua;
   max-width: 100%;
+  padding-bottom: 16px;
 }
 
-.container .Parrafo {
-  margin-left: 0;
-  padding: 0.3em;
-  font-size: 2.2em;
+.centered-container {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
 }
 
 .Icon {
@@ -21,70 +27,76 @@
   margin-left: 70px;
 }
 
+/* ── Grid de certificados ── */
 .productos-container {
   margin: 1%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 10px;
 }
 
 .producto {
-  width: calc(33.33% - 20px);
-  margin-bottom: 20px;
+  flex: 0 0 calc(33.33% - 11px);
+  max-width: calc(33.33% - 11px);
   border: 1px solid black;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #191c32;
+  overflow: hidden;
+}
+
+.producto a {
+  display: block;
+  text-decoration: none;
 }
 
 .producto img {
   width: 100%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  display: block;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .info {
-  padding: 15px;
+  padding: 12px 15px;
 }
 
 .info h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 14px;
+  margin: 0;
   color: aqua;
   text-align: center;
+  line-height: 1.4;
 }
 
-.info p {
-  font-size: 14px;
-  color: #e1e1e1;
+/* ── Tablet ── */
+@media (max-width: 900px) {
+  .producto {
+    flex: 0 0 calc(50% - 8px);
+    max-width: calc(50% - 8px);
+  }
 }
 
-.seccion {
-  margin-bottom: 30px;
-  background-color: #ffff;
-  border-radius: 10px;
-}
-@media (max-width: 480px) {
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .categorias-wrapper {
+    margin: 3%;
+    gap: 20px;
+  }
+
   .centered-container {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
   }
 
   .Icon {
     margin: 10px 0;
-  }
-  .seccion {
-    align-items: stretch;
-  }
-
-  .productos-container {
-    align-items: center;
+    font-size: 1.6em;
   }
 
   .producto {
-    flex: 1 0 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
-    margin-bottom: 20px;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }

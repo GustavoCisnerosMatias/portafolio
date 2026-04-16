@@ -71,47 +71,82 @@ h1 {
 
 .main img {
   border: 7px solid aqua;
-  margin-left: 20%;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 5%;
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
 }
 
 a:hover {
   background-color: #27817e;
   transition: ease-in 0.4s;
 }
-@media (max-width: 480px) {
-  .brand h2 {
-    font-size: 1.5em;
-  }
-
-  a {
-    padding: 8px 10px;
-  }
-
-  .content {
-    padding: 10px;
-    max-width: 100%;
-  }
-
+@media (max-width: 600px) {
+  /* Info izquierda, foto derecha — centrada verticalmente en el espacio */
   .main {
-    align-items: start;
-    grid-template-columns: repeat(2, 1fr);
     display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+
+    padding-top: 10px;
   }
+
   .main img {
-    width: 75px;
+    width: 120px;
+    object-fit: cover;
+    object-position: top center;
     border: 2px solid aqua;
-    margin-left: 0%;
+    margin: 0;
+    align-self: center;
   }
 
   .info-content {
-    margin-left: 3%;
-    max-width: 250;
+    margin-left: 2%;
   }
+
+  h1 {
+    font-size: 1.3em;
+  }
+
+  p {
+    font-size: 0.78em;
+    margin-top: 3px;
+  }
+
+  .separator {
+    padding-bottom: 4px;
+  }
+
+  li {
+    font-size: 0.95em;
+    padding: 0.2em;
+  }
+
   .button-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 4px;
+  }
+
+  .downloadCv {
+    padding: 7px 14px;
+    font-size: 0.82em;
+  }
+
+  .email-line {
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    text-align: center;
+    gap: 4px;
+  }
+
+  .email-text {
+    font-size: 0.78em;
+    word-break: break-all;
+    line-height: 1.3;
   }
 }
