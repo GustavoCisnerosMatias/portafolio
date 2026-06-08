@@ -1,0 +1,42 @@
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+
+    <div animateOnScroll class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 gradient-text">Sobre Mí</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Ingeniero en Tecnologías de la Información con experiencia en desarrollo de software y
+        soluciones tecnológicas. Me especializo en construir aplicaciones web escalables y eficientes
+        que resuelven problemas reales, aplicando buenas prácticas de programación y metodologías ágiles.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div *ngFor="let f of features; let i = index"
+        animateOnScroll [animDelay]="i * 100"
+        class="bg-white rounded-xl p-6 border-2 border-transparent hover:border-purple-200 hover:shadow-lg transition-all">
+        <div class="bg-gradient-to-r from-purple-100 to-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+          <fa-icon [icon]="f.icon" class="text-purple-600 text-2xl"></fa-icon>
+        </div>
+        <h3 class="font-semibold mb-2">{{ f.title }}</h3>
+        <p class="text-gray-600 text-sm">{{ f.description }}</p>
+      </div>
+    </div>
+
+    <div animateOnScroll [animDelay]="400" class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8 md:p-12">
+      <h3 class="text-2xl font-bold mb-6">Mi Trayectoria</h3>
+      <div class="space-y-4 text-gray-700">
+        <p>
+          Actualmente trabajo en el Ministerio de Desarrollo Humano y anteriormente en el Ministerio de Gobierno,
+          participando en proyectos institucionales que mejoran la eficiencia y la gestión administrativa. De forma
+          independiente, me he desempeñado como freelancer, desarrollando sistemas web como el del CAC de Santa Elena.
+        </p>
+        <p>
+          Me mantengo en constante aprendizaje sobre las últimas tendencias y tecnologías del desarrollo web,
+          con formación en redes, bases de datos, sistemas operativos y seguridad informática, siempre buscando
+          aportar soluciones eficientes e innovadoras a cada proyecto.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>

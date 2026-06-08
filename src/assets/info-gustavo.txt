@@ -1,0 +1,183 @@
+INFORMACIÓN SOBRE GUSTAVO ALEJANDRO CISNEROS MATIAS
+=====================================================
+
+DATOS PERSONALES:
+- Nombre completo: Gustavo Alejandro Cisneros Matias
+- País: Ecuador
+- Fecha de nacimiento: 22 de Diciembre 2002
+- Correo: gustavo.cisnerosmatias@gmail.com
+- GitHub: https://github.com/GustavoCisnerosMatias
+- LinkedIn: https://www.linkedin.com/in/gustavo-cisneros-b389992ab/
+- Sitio web: https://g-cisneros.web.app
+- Facebook: https://www.facebook.com/gustavos.cisneros.10/
+- Instagram: https://www.instagram.com/gustavos.cisneros.10/
+
+VIDA PERSONAL:
+- Pareja: Lizbeth Adriana Santamaría Herrera, también desarrolladora y una de sus mayores inspiraciones en el mundo tecnológico.
+
+PERFIL PROFESIONAL:
+Ingeniero en Tecnologías de la Información con experiencia sólida en desarrollo de software full-stack, sistemas IoT, automatización de datos y seguridad informática. Se especializa en construir aplicaciones web y móviles escalables que resuelven problemas reales del sector público, universitario y empresarial ecuatoriano. Ha liderado proyectos con impacto medible: desde sistemas con más de 1.000 usuarios migrados automáticamente, hasta plataformas IoT que procesan más de 50.000 registros en tiempo real. Aplica buenas prácticas de programación, control de versiones con Git y metodologías ágiles en todos sus proyectos.
+
+EXPERIENCIA LABORAL DETALLADA:
+
+1. CAC Santa Elena (Freelance)
+   DESCRIPCIÓN GENERAL:
+   Sistema web desarrollado para el Centro de Atención a la Comunidad (CAC) de Santa Elena, diseñado para optimizar completamente la gestión de asistencia institucional, eliminando el registro manual en hojas de Excel que era lento, propenso a errores y difícil de escalar.
+
+   PROBLEMA RESUELTO:
+   El CAC registraba la asistencia de forma manual en Excel, lo que generaba pérdida de tiempo, inconsistencias en los datos y dificultad para consultar el historial. Gustavo desarrolló un sistema web completo que digitalizó y automatizó este proceso.
+
+   FUNCIONALIDADES IMPLEMENTADAS:
+   - Registro de asistencia individual y múltiple (varios IDs en un solo envío), reduciendo el tiempo por operación.
+   - Consulta de historial de asistencias por participante, fecha y actividad.
+   - Panel administrativo para gestión de usuarios, actividades y reportes.
+   - Importación masiva de datos desde Excel hacia la base de datos Firestore.
+
+   SCRIPTS PYTHON DESARROLLADOS:
+   - Script 1: Limpieza y preparación de datos existentes en Excel para asegurar integridad antes de la migración. Permitió importar masivamente más de 1.000 usuarios directamente al sistema sin intervención manual.
+   - Script 2: Extracción de actividades pasadas e IDs de participantes desde registros históricos, habilitando la reconstrucción del historial completo de asistencias en el nuevo sistema.
+
+   IMPACTO EN PRODUCCIÓN (evidenciado en Firestore):
+   - El sistema generó un alto volumen de lecturas, escrituras y consultas en Firestore (NoSQL), demostrando adopción real y uso activo por parte de los usuarios del CAC.
+   - Más de 1.000 usuarios migrados exitosamente desde Excel a Firebase Firestore mediante automatización Python.
+   - Eliminación total del registro manual, reduciendo errores y tiempos de gestión.
+
+   STACK TECNOLÓGICO: Angular + Firebase (Firestore NoSQL) + Python (scripting de migración y limpieza de datos)
+
+2. VITECED (Sistema IoT Biomédico Universitario)
+   DESCRIPCIÓN GENERAL:
+   Sistema de monitoreo biomédico en tiempo real desarrollado en el contexto universitario (TECED), orientado a la adquisición, visualización y análisis de señales bioeléctricas como el ECG (electrocardiograma) desde dispositivos IoT.
+
+   FUNCIONALIDADES IMPLEMENTADAS:
+   - Adquisición en tiempo real de señales biomédicas (ECG) desde dispositivos IoT conectados.
+   - Visualización en vivo de señales en interfaz gráfica dinámica y actualizada al instante.
+   - Módulo de análisis estadístico para la detección automatizada de falsos positivos en mediciones ECG, mejorando la confiabilidad de los datos.
+   - Almacenamiento estructurado de señales y datos biomédicos en base de datos para análisis posterior.
+   - Panel de control administrativo con gestión de más de 50.000 entradas de datos procesadas desde dispositivos IoT.
+
+   IMPACTO TÉCNICO:
+   - Procesamiento de más de 50.000 registros de datos biomédicos desde dispositivos IoT.
+   - Sistema capaz de detectar anomalías estadísticas en tiempo real para reducir diagnósticos incorrectos.
+   - Arquitectura escalable que integra hardware IoT con software web en tiempo real.
+
+   STACK TECNOLÓGICO: Ionic + Angular + PHP (Fat-Free Framework) + IoT
+
+3. FACSISTEL (Sistema de Gestión de Incidencias TI - Facultad)
+   DESCRIPCIÓN GENERAL:
+   Sistema web de gestión y seguimiento de incidencias técnicas desarrollado para el Departamento de TI de la Facultad (FACSISTEL). Permite registrar, gestionar y resolver reportes de problemas técnicos con un flujo de trabajo colaborativo entre distintos roles.
+
+   FUNCIONALIDADES IMPLEMENTADAS:
+   - Creación y registro de nuevos reportes de incidencias técnicas con descripción, prioridad y categoría.
+   - Vista completa de todos los reportes activos con filtros por estado, tipo y responsable.
+   - Vista detallada de cada reporte individual con historial completo de cambios y comentarios.
+   - Sistema de comentarios colaborativos: cualquier rol autorizado puede agregar notas, actualizaciones o soluciones.
+   - Actualización de estados del reporte (abierto, en progreso, resuelto, cerrado).
+   - Historial detallado de resoluciones para consulta futura y documentación institucional.
+
+   ROLES DEL SISTEMA:
+   - Administrador: gestión completa de reportes, usuarios y configuración del sistema.
+   - Profesional TI: gestión y resolución de incidencias asignadas.
+   - Pasante: registro de reportes y seguimiento de incidencias en las que colabora.
+
+   STACK TECNOLÓGICO: Angular + NestJS + MySQL
+
+4. AGUAPEN MANGLARALTO (Sistema de Reportes - Empresa de Agua Potable)
+   DESCRIPCIÓN GENERAL:
+   Sistema de gestión y visualización de reportes operativos desarrollado para AGUAPEN, la empresa de agua potable de Manglaralto. El sistema permite generar, visualizar y analizar reportes clave para la toma de decisiones operativas y de servicio.
+
+   FUNCIONALIDADES IMPLEMENTADAS:
+   - Dashboard principal con reportes operativos y de servicio clave en tiempo real.
+   - Vista detallada de reportes generados con información estructurada para análisis.
+   - Visualización de reportes resumen para soporte a la toma de decisiones gerenciales.
+   - Apoyo parcial al proceso de facturación SRI, integrando datos del sistema con los requerimientos tributarios del Ecuador.
+   - Control de versiones con Git/GitHub durante todo el desarrollo.
+
+   IMPACTO:
+   - Reemplazo de procesos manuales por un sistema digital que garantiza precisión y trazabilidad de los datos.
+   - Soporte a decisiones operativas basadas en datos reales del servicio de agua potable.
+
+   STACK TECNOLÓGICO: Angular + Express.js (Node.js) + MySQL + Git/GitHub
+
+5. Ministerio de Desarrollo Humano (Empleo actual)
+   - Desarrollador de software en proyectos institucionales del Ministerio.
+   - Participación en el diseño e implementación de soluciones digitales que mejoran la eficiencia y la gestión administrativa del Estado.
+   - Aplicación de buenas prácticas de desarrollo y seguridad en sistemas gubernamentales.
+
+6. Ministerio de Gobierno
+   - Desarrollo de sistemas de gestión gubernamental y proyectos institucionales tecnológicos.
+   - Experiencia en entornos de alta responsabilidad con datos sensibles del sector público.
+
+PROYECTOS EN GITHUB (sección Projects del portafolio):
+
+1. WebScraping BeautifulSoup
+   - Extrae datos automáticamente de un sitio de noticias ecuatoriano y los exporta en formato CSV.
+   - Demuestra habilidades de automatización web y procesamiento de datos con Python.
+   - Stack: Python + BeautifulSoup
+   - Nota: el repositorio se llama "beautifulSoap" (con 'a') en GitHub.
+
+2. WebScraping Selenium
+   - Automatiza la búsqueda y extracción de precios de hoteles en trivago.com.ec, guardando resultados en CSV.
+   - Demuestra manejo de navegadores headless y extracción de datos dinámicos con JavaScript.
+   - Stack: Python + Selenium
+
+3. Hotel
+   - Aplicación de escritorio completa para gestión hotelera: reservas, facturación y reportes.
+   - Stack: Java + FXML (JavaFX) + SQL Server
+
+4. Store
+   - Sistema de gestión de tienda con facturación y control de bodega.
+   - Roles diferenciados: cajero y administrador con permisos distintos.
+   - Stack: Java + FXML (JavaFX) + SQL Server
+
+5. Inventory
+   - CRUD completo de inventario con interfaz móvil.
+   - Stack: Ionic + Fat-Free Framework (PHP) + MySQL
+
+6. Arcane
+   - Aplicación de gestión de mesas de restaurante con sistema de pedidos por código QR.
+   - Los clientes escanean el QR de su mesa para hacer pedidos directamente desde su celular.
+   - Stack: Ionic (Angular) + Fat-Free Framework (PHP) + MySQL
+
+HABILIDADES TÉCNICAS:
+- Lenguajes: Java, Python, JavaScript, TypeScript, PHP, SQL
+- Backend: NestJS, Express.js (Node.js), Spring Boot, Fat-Free Framework (PHP)
+- Frontend: Angular, Ionic (Angular)
+- Bases de datos: Firestore (Firebase NoSQL), MySQL, SQL Server, MongoDB
+- DevOps: Docker, Firebase Hosting, Git, GitHub
+- IoT: Sistemas de monitoreo biomédico en tiempo real, procesamiento de señales ECG, más de 50.000 registros gestionados desde dispositivos IoT
+- Scripting y automatización de datos: Python con BeautifulSoup (web scraping), Selenium (automatización de navegadores), pandas/scripts de migración masiva de datos
+- Seguridad informática: Ethical Hacking, Pentesting, Ingeniería Social, Web Hacking
+
+CERTIFICACIONES (14 certificados verificados de Platzi):
+Backend / NestJS:
+1. Backend with NestJS
+2. NestJS Modular Programming
+3. NestJS TypeORM
+4. NestJS MongoDB
+5. NestJS Authentication
+
+Programación / Cloud:
+6. Python Fundamentals
+7. Comprehensions, Functions & Error Handling (Python)
+8. AWS Cloud Practitioner
+9. Web Development Path (RutaDesarrolloWeb)
+10. Programming from Zero (ProgramacionCero)
+
+Hacking / Ciberseguridad:
+11. Ethical Hacking
+12. Pentesting
+13. Social Engineering
+14. Web Hacking
+
+FORMACIÓN ACADÉMICA:
+- Título: Ingeniero en Tecnologías de la Información
+- Formación complementaria en redes, bases de datos, sistemas operativos y seguridad informática
+
+PERSONALIDAD Y ESTILO DE TRABAJO:
+- Apasionado por la tecnología, la innovación y los sistemas en tiempo real
+- Resuelve problemas reales con impacto medible: sistemas con 1.000+ usuarios, 50.000+ registros IoT
+- Siempre en constante aprendizaje y actualización tecnológica
+- Trabaja con metodologías ágiles y buenas prácticas de desarrollo
+- Enfoque en soluciones eficientes, escalables e innovadoras
+- Experiencia en proyectos gubernamentales, universitarios, empresariales y freelance
+- Joven ingeniero ecuatoriano con amplia trayectoria y gran proyección profesional

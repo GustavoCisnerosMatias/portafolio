@@ -1,275 +1,97 @@
 import { Component } from '@angular/core';
-import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
-import { Experience, Slide } from '../entities/experience.entities';
+import { faBriefcase, faCalendar } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css'],
 })
 export class ExperienceComponent {
-  faPeopleGroup = faPeopleGroup;
-  experiences: Experience[] = [
+  faBriefcase = faBriefcase;
+  faCalendar = faCalendar;
+
+  experiences = [
     {
-      id: '1',
-      title: 'CAC Santa Elena',
-      description: '',
-      slides: [
-        {
-          img: './assets/attendance1.png',
-          description:
-            'The application was designed to optimize attendance management, replacing manual Excel tracking. This significantly reduced registration times and improved the organization and accessibility of attendance data.',
-        },
-        {
-          img: './assets/attendance2.png',
-          description:
-            'Since the application was not used from the beginning of the program, I developed a Python script to clean and prepare the existing data. This allowed for a one-time bulk import of over 1,000 users from an Excel file directly into the system.',
-        },
-        {
-          img: './assets/attendance3.png',
-          description:
-            'Additionally, I implemented another Python script to extract past activities and participants’ IDs, enabling the registration of historical attendance records. I also added a feature to register multiple IDs in a single submission, further optimizing the process.',
-        },
-        {
-          img: './assets/attendance4.jpg',
-          description:
-            'This image shows the traffic generated in Firestore, the NoSQL database used by the application, demonstrating the high volume of queries and data operations performed.',
-        },
-        {
-          img: './assets/tec1.png',
-          description: 'Technologies used for the project.',
-        },
-      ],
+      role: 'Desarrollador de Software',
+      company: 'Ministerio de Desarrollo Humano',
+      period: 'Diciembre 2025 - Actualmente',
+      description: 'Encargado del desarrollo full stack, utilizando Spring Boot, Angular y SQL Server para crear soluciones eficientes que mejoran la operatividad y la transformación digital.',
+      achievements: [
+        'Desarrollo de soluciones digitales institucionales',
+        'Implementación de buenas prácticas de programación',
+        'Optimización de procesos administrativos'
+      ]
     },
     {
-      id: '2',
-      title: 'VITECED',
-      description: '',
-      slides: [
-        {
-          img: './assets/teced_video.mp4',
-          description:
-            'Demonstration video showcasing the full functionality of the system in real time, including the acquisition and visualization of bioelectrical signals such as ECG. It also highlights biomedical data management, live monitoring, database storage, and the detection of potential false positives through statistical analysis, ensuring reliable measurements from IoT devices.',
-          isVideo: true,
-        },
-        {
-          img: './assets/teced_ECG.PNG',
-          description:
-            'Real-time ECG monitoring interface displaying signals collected from IoT devices.',
-        },
-        {
-          img: './assets/teced_ECG falsos positivos.PNG',
-          description:
-            'View of the statistical analysis module for detecting false positives in ECG measurements.',
-        },
-        {
-          img: './assets/teced_datos.png',
-          description:
-            'Control panel managing over 50,000 data entries processed from IoT devices for storage and analysis.',
-        },
-        {
-          img: './assets/tec2.png',
-          description: 'Technologies used for the project.',
-        },
-      ],
+      role: 'Desarrollador de Software',
+      company: 'Ministerio de Gobierno',
+      period: 'Noviembre 2025 - Diciembre 2025',
+      description: 'Desarrollador de software en los sistemas del Ministerio de Gobierno, responsable del diseño, implementación y optimización de soluciones digitales.',
+      achievements: [
+        'Diseño de arquitectura de software',
+        'Mejora de eficiencia en gestión administrativa',
+        'Implementación de sistemas escalables'
+      ]
     },
     {
-      id: '3',
-      title: 'FACSISTEL',
-      description: '',
-      slides: [
-        {
-          img: './assets/upse_dashboard.png',
-          description:
-            'During my experience at FACSISTEL, I developed a reporting and issue-tracking system designed to document, monitor, and manage technical incidents within the IT department. The platform enabled different user roles—administrators, IT professionals, and interns—to collaborate effectively by adding comments, updating statuses, and maintaining a detailed history of resolutions. It was built with Angular for the frontend, NestJS for the backend, and MySQL as the relational database, ensuring secure and scalable data management.',
-        },
-        {
-          img: './assets/upse_reporte.png',
-          description: 'Interface for creating and registering a new report.',
-        },
-        {
-          img: './assets/upse_reportes.png',
-          description:
-            'View of the complete list of reports with filtering options.',
-        },
-        {
-          img: './assets/upse_manual.png',
-          description:
-            'Detailed view of an individual report, including its history and comments.',
-        },
-        {
-          img: './assets/tec3.png',
-          description: 'Technologies used for the project.',
-        },
-      ],
+      role: 'Desarrollador Full Stack',
+      company: 'Sistema TECED - Proyecto Universitario',
+      period: 'Marzo 2025 - Septiembre 2025',
+      description: 'Desarrollé un sistema de monitoreo remoto de ECG con adquisición y visualización de señales en tiempo real.',
+      achievements: [
+        'Procesamiento de más de 50K registros de señales ECG',
+        'Implementación de módulo de análisis estadístico',
+        'Detección de falsos positivos con IoT',
+        'Desarrollo de sistema de tiempo real'
+      ]
     },
     {
-      id: '4',
-      title: 'AGUAPEN MANGLARALTO',
-      description: '',
-      slides: [
-        {
-          img: './assets/jaapman_reporte 1.jpg',
-          description:
-            'During my experience at Aguapen, the drinking water service, I was responsible for managing and preparing reports, ensuring accurate data visualization. I also partially supported the SRI billing process. Throughout development, I used Git and GitHub for version control, facilitating team collaboration and efficient project tracking. The system was built with Angular and Express, using MySQL as the database.',
-        },
-        {
-          img: './assets/jaapman_reporte 2.jpg',
-          description: 'Dashboard showing key operational and service reports.',
-        },
-        {
-          img: './assets/jaapman_reporte 3.jpg',
-          description:
-            'Detailed view of a generated report with structured information.',
-        },
-        {
-          img: './assets/jaapman_reporte 4.jpg',
-          description:
-            'Summary report visualization for decision-making and analysis.',
-        },
-        {
-          img: './assets/tec4.png',
-          description: 'Technologies used for the project.',
-        },
-      ],
+      role: 'Desarrollador Full Stack',
+      company: 'FACSISTEL - Universidad UPSE',
+      period: 'Noviembre 2024 - Febrero 2025',
+      description: 'Implementé un sistema de gestión de reportes e incidencias técnicas para el área de TI de la universidad.',
+      achievements: [
+        'Desarrollo desde concepción hasta despliegue',
+        'Configuración de servidores de producción',
+        'Implementación de entorno seguro y escalable',
+        'Gestión de reportes técnicos en tiempo real'
+      ]
     },
+    {
+      role: 'Desarrollador Web',
+      company: 'CAC Santa Elena - Freelance',
+      period: 'Julio 2024 - Octubre 2024',
+      description: 'Implementé una aplicación web con Firestore en tiempo real para optimizar el control de asistencias en la provincia.',
+      achievements: [
+        '161K lecturas en Firestore',
+        '5.9K escrituras de datos',
+        '500 eliminaciones optimizadas',
+        'Reemplazo de sistema manual en Excel'
+      ]
+    },
+    {
+      role: 'Desarrollador Full Stack',
+      company: 'AGUAPEN Manglaralto',
+      period: 'Marzo 2024 - Junio 2024',
+      description: 'Colaboré en el desarrollo de un sistema de reportes para la empresa de agua potable.',
+      achievements: [
+        'Generación y visualización de reportes operativos',
+        'Apoyo en facturación electrónica con SRI',
+        'Control de versiones con Git y GitHub',
+        'Desarrollo con Angular, Express y MySQL'
+      ]
+    },
+    {
+      role: 'Desarrollador',
+      company: 'BMCodigoMarriet S.A.S',
+      period: 'Marzo 2023 - Marzo 2024',
+      description: 'Encargado del desarrollo del sistema contable y de la plataforma de eventos deportivos.',
+      achievements: [
+        'Diseño de sistema contable completo',
+        'Implementación de plataforma de eventos deportivos',
+        'Fortalecimiento de gestión contable',
+        'Innovación en gestión de eventos'
+      ]
+    }
   ];
-
-  // experiences: Experience[] = [
-  //   {
-  //     id: '1',
-  //     title: 'CAC Santa Elena',
-  //     description: '',
-  //     slides: [
-  //       {
-  //         img: './assets/attendance1.png',
-  //         description:
-  //           'La aplicación fue diseñada para optimizar la gestión de asistencias, reemplazando el control manual en Excel, lo que redujo significativamente los tiempos de registro y mejoró la organización de la información.',
-  //       },
-  //       {
-  //         img: './assets/attendance2.png',
-  //         description:
-  //           'Como la aplicación no se utilizó desde el inicio del programa, desarrollé un script en Python para limpiar y preparar los datos. Esto permitió cargar masivamente la información desde un archivo Excel mediante una funcionalidad especial que solo se habilitó una vez para registrar más de 1,000 usuarios de forma automática.',
-  //       },
-  //       {
-  //         img: './assets/attendance3.png',
-  //         description:
-  //           'Asimismo, implementé otro script en Python para extraer las actividades y las cédulas de todos los participantes, permitiendo registrar asistencias pasadas de manera masiva. Además, añadí la opción de registrar varias cédulas en un solo envío, optimizando aún más el proceso.',
-  //       },
-  //       {
-  //         img: './assets/attendance4.jpg',
-  //         description:
-  //           'En esta imagen se puede observar el tráfico generado en Firestore, la base de datos no relacional utilizada por la aplicación, evidenciando el volumen de consultas y registros realizados.',
-  //       },
-  //       {
-  //         img: './assets/tec1.png',
-  //         description: 'Las tecnologias Usadas fueron las siguientes',
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     id: '2',
-  //     title: 'VITECED',
-  //     description: '',
-  //     slides: [
-  //       {
-  //         img: './assets/teced_video.mp4',
-  //         description:
-  //           'Video demostrativo que muestra el funcionamiento completo del sistema en tiempo real, incluyendo la adquisición y visualización de señales bioeléctricas como ECG, así como la gestión de datos biomédicos. Se puede observar cómo la plataforma permite el monitoreo en vivo, el almacenamiento en la base de datos y la detección de posibles falsos positivos mediante análisis estadísticos, optimizando el control de las mediciones provenientes de dispositivos IoT.',
-  //         isVideo: true,
-  //       },
-  //       {
-  //         img: './assets/teced_ECG.PNG',
-  //         description:
-  //           'Interfaz de monitoreo ECG en tiempo real, mostrando las señales obtenidas desde los dispositivos IoT.',
-  //       },
-  //       {
-  //         img: './assets/teced_ECG falsos positivos.PNG',
-  //         description:
-  //           'Vista del módulo de análisis estadístico para la detección de falsos positivos en las mediciones de ECG.',
-  //       },
-  //       {
-  //         img: './assets/teced_datos.png',
-  //         description:
-  //           'Panel de control con la gestión de más de 50,000 datos procesados desde dispositivos IoT para su almacenamiento y análisis.',
-  //       },
-  //       {
-  //         img: './assets/tec2.png',
-  //         description: 'Las tecnologias Usadas fueron las siguientes',
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     id: '3',
-  //     title: 'FACSISTEL',
-  //     description:
-  //       'During my experience at Aguapen, I managed and prepared reports ensuring accurate data visualization...',
-  //     slides: [
-  //       {
-  //         img: './assets/upse_dashboard.png',
-  //         description:
-  //           'During my experience at FACSISTEL, I developed a reporting and issue-tracking system designed to document, monitor, and manage technical incidents within the IT department. The platform allowed different user roles—administrators, IT professionals, and interns—to collaborate efficiently by adding comments, updating statuses, and keeping a detailed history of resolutions. It was built with Angular for the frontend, NestJS for the backend, and MySQL as the relational database, ensuring secure and scalable data management.',
-  //       },
-  //       {
-  //         img: './assets/upse_reporte.png',
-  //         description: 'Interfaz para registrar un nuevo reporte',
-  //       },
-  //       {
-  //         img: './assets/upse_reportes.png',
-  //         description: 'Vista de la lista completa de reportes',
-  //       },
-  //       {
-  //         img: './assets/upse_manual.png',
-  //         description: 'Vista detallada de un reporte individual',
-  //       },
-  //       {
-  //         img: './assets/tec3.png',
-  //         description: 'Las tecnologias Usadas fueron las siguientes',
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     id: '4',
-  //     title: 'AGUAPEN MANGLARALTO',
-  //     description: '',
-  //     slides: [
-  //       {
-  //         img: './assets/jaapman_reporte 1.jpg',
-  //         description:
-  //           'During my experience at Aguapen, the drinking water service, I was in charge of managing and preparing reports, ensuring accurate data visualization. I also partially supported the SRI billing process. Throughout development, I used Git and GitHub to manage and version the code, which facilitated team collaboration and efficient tracking of project changes. Development was done with Angular and Express, using MySQL as the database.',
-  //       },
-  //       {
-  //         img: './assets/jaapman_reporte 2.jpg',
-  //         description: 'Report',
-  //       },
-  //       {
-  //         img: './assets/jaapman_reporte 3.jpg',
-  //         description: 'Report',
-  //       },
-  //       {
-  //         img: './assets/jaapman_reporte 4.jpg',
-  //         description: 'Report',
-  //       },
-  //       {
-  //         img: './assets/tec4.png',
-  //         description: 'Las tecnologias Usadas fueron las siguientes',
-  //       },
-  //     ],
-  //   },
-  // ];
-  currentSlide: { [key: string]: number } = {}; // índice actual por experiencia
-
-  constructor() {
-    // Inicializamos todos los carruseles en 0
-    this.experiences.forEach((exp) => {
-      this.currentSlide[exp.id] = 0;
-    });
-  }
-
-  nextSlide(expId: string, total: number) {
-    this.currentSlide[expId] = (this.currentSlide[expId] + 1) % total;
-  }
-
-  prevSlide(expId: string, total: number) {
-    this.currentSlide[expId] = (this.currentSlide[expId] - 1 + total) % total;
-  }
 }

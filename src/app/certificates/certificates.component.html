@@ -1,19 +1,48 @@
-<div class="categorias-wrapper">
-  <div *ngFor="let categoria of categorias" class="categoria-seccion">
-    <div class="centered-container">
-      <h3 class="Icon">
-        <fa-icon [icon]="categoria.icono"></fa-icon> {{ categoria.nombre }}
-      </h3>
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+
+    <div animateOnScroll class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 gradient-text">Certificaciones</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+        Formación continua en tecnologías modernas, seguridad informática y buenas prácticas de desarrollo.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 mb-6">
+        <button
+          *ngFor="let cat of categories"
+          (click)="selectedCategory = cat"
+          [class]="selectedCategory === cat
+            ? 'px-6 py-2 rounded-full font-medium text-white shadow-lg bg-gradient-to-r from-purple-600 to-blue-600'
+            : 'px-6 py-2 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all'"
+        >
+          {{ cat }}
+        </button>
+      </div>
+      <p class="text-sm text-gray-500 max-w-2xl mx-auto italic">
+        {{ categoryTagline }}
+      </p>
     </div>
-    <div class="productos-container">
-      <div *ngFor="let certificado of categoria.certificados" class="producto">
-        <a [href]="certificado.img" target="_blank">
-          <img [src]="certificado.img" [alt]="certificado.description" />
-          <div class="info">
-            <h2>{{ certificado.description }}</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        *ngFor="let cert of filteredCerts"
+        class="bg-white rounded-xl p-6 border-2 border-transparent hover:border-purple-200 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col shadow-md"
+      >
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" [style.background]="cert.gradient">
+            <fa-icon [icon]="faAward" class="text-white text-lg"></fa-icon>
           </div>
+          <span class="text-xs px-2 py-1 rounded-full border border-gray-300 text-gray-600">{{ cert.category }}</span>
+        </div>
+        <h3 class="font-bold mb-1 text-lg">{{ cert.title }}</h3>
+        <p class="text-sm text-gray-500 mb-2">{{ cert.issuer }}</p>
+        <p class="text-sm text-gray-500 flex-1">{{ cert.description }}</p>
+        <a [href]="cert.img" target="_blank"
+          class="mt-4 text-purple-600 hover:text-purple-700 text-sm font-medium flex items-center gap-2 group">
+          Ver certificado
+          <fa-icon [icon]="faExternalLink" class="group-hover:translate-x-1 transition-transform text-xs"></fa-icon>
         </a>
       </div>
     </div>
+
   </div>
-</div>
+</section>

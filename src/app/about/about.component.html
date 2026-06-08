@@ -1,57 +1,76 @@
-<div class="main-container">
-  <main class="main">
-    <div class="info-content">
-      <div class="separator">
-        <h1 class="padding: 5px">I'm <span>Gustavo</span> Cisneros</h1>
+<section class="min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-br from-purple-50 via-white to-blue-50">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
+
+    <!-- Info -->
+    <div class="hero-left hero-info">
+      <h1 class="mb-4">
+        <span class="text-gray-600 block mb-2 text-xl">Hola, soy</span>
+        <span class="block text-5xl font-bold gradient-text">Gustavo Cisneros</span>
+      </h1>
+      <p class="text-xl text-gray-700 mb-4">Ingeniero en Tecnologías de la Información</p>
+      <p class="text-gray-600 mb-1">📍 Ecuador</p>
+      <p class="text-gray-600 mb-6">🎂 22 de Diciembre 2002</p>
+      <p class="text-gray-600 mb-8 max-w-lg text-sm leading-relaxed">
+        Ingeniero en Tecnologías de la Información con experiencia en desarrollo de software y soluciones tecnológicas.
+        Actualmente trabajo en el Ministerio de Desarrollo Humano, participando en proyectos institucionales y
+        aplicando buenas prácticas de programación, escalabilidad y rendimiento.
+      </p>
+
+      <div class="flex gap-4 mb-8 flex-wrap">
+        <button
+          (click)="scrollTo('proyectos')"
+          class="px-6 py-3 rounded-lg font-medium text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all"
+        >
+          Ver Proyectos
+        </button>
+        <a download="CV.pdf" href="./assets/CV.pdf"
+          class="px-6 py-3 rounded-lg font-medium border border-gray-300 text-gray-700 hover:border-purple-400 hover:text-purple-600 transition-all"
+        >
+          Descargar CV
+        </a>
       </div>
-      <div class="separator">
-        <p>Engineering in Information Technologies</p>
-        <p><fa-icon [icon]="faLocationDot"></fa-icon> Ecuador</p>
-        <p><fa-icon [icon]="faCalendarDays"></fa-icon> 22 DECEMBER 2002</p>
-        <p class="email-line">
-          <fa-icon [icon]="faEnvelope"></fa-icon>
-          <span class="email-text"> gustavo.cisnerosmatias@gmail.com</span>
-        </p>
-      </div>
-      <div class="separator">
-        <ul>
-          <li>
-            <a
-              href="https://www.facebook.com/gustavos.cisneros.10/"
-              target="_blank"
-            >
-              <fa-icon [icon]="faFacebook" class="listIcons"></fa-icon>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/gustavo-cisneros-b389992ab/"
-              target="_blank"
-            >
-              <fa-icon [icon]="faLinkedin" class="listIcons"></fa-icon>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/GustavoCisnerosMatias" target="_blank">
-              <fa-icon [icon]="faGithub" class="listIcons"></fa-icon>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/gustavos.cisneros.10/"
-              target="_blank"
-            >
-              <fa-icon [icon]="faInstagram" class="listIcons"></fa-icon>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="button-container">
-        <a download="CV.pdf" href="./assets/CV.pdf">
-          <button class="downloadCv">Download CV</button>
+
+      <div class="flex gap-3">
+        <a href="https://github.com/GustavoCisnerosMatias" target="_blank"
+          class="p-2 rounded-full hover:bg-purple-100 transition-colors" title="GitHub">
+          <fa-icon [icon]="faGithub" class="text-gray-700 text-xl"></fa-icon>
+        </a>
+        <a href="https://www.linkedin.com/in/gustavo-cisneros-b389992ab/" target="_blank"
+          class="p-2 rounded-full hover:bg-purple-100 transition-colors" title="LinkedIn">
+          <fa-icon [icon]="faLinkedin" class="text-gray-700 text-xl"></fa-icon>
+        </a>
+        <a href="mailto:gustavo.cisnerosmatias@gmail.com"
+          class="p-2 rounded-full hover:bg-purple-100 transition-colors" title="Email">
+          <fa-icon [icon]="faEnvelope" class="text-gray-700 text-xl"></fa-icon>
+        </a>
+        <a href="https://www.facebook.com/gustavos.cisneros.10/" target="_blank"
+          class="p-2 rounded-full hover:bg-purple-100 transition-colors" title="Facebook">
+          <fa-icon [icon]="faFacebook" class="text-gray-700 text-xl"></fa-icon>
+        </a>
+        <a href="https://www.instagram.com/gustavos.cisneros.10/" target="_blank"
+          class="p-2 rounded-full hover:bg-purple-100 transition-colors" title="Instagram">
+          <fa-icon [icon]="faInstagram" class="text-gray-700 text-xl"></fa-icon>
         </a>
       </div>
     </div>
-    <img src="./assets/lml5.png" />
-  </main>
-</div>
+
+    <!-- Photo -->
+    <div class="hero-right flex justify-center">
+      <div class="photo-card">
+        <div class="photo-glow"></div>
+        <img
+          src="./assets/lml5.png"
+          alt="Gustavo Cisneros"
+          class="photo-img"
+        />
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Arrow bounce -->
+  <div class="hero-arrow absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
+       (click)="scrollTo('sobre-mi')">
+    <fa-icon [icon]="faChevronDown" class="text-purple-600 text-2xl"></fa-icon>
+  </div>
+</section>

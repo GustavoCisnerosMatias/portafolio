@@ -1,38 +1,38 @@
-<div class="container">
-  <div class="centered-container">
-    <h3 class="Icon"><fa-icon [icon]="faLaptopCode"></fa-icon> Technologies</h3>
-  </div>
-  <div>
-    <ul>
-      <li>
-        <img src="./assets/java.png" />
-        <span class="description">Java</span>
-      </li>
-      <li>
-        <img src="./assets/python.png" />
-        <span class="description">Python</span>
-      </li>
+<section class="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+  <div class="max-w-6xl mx-auto">
 
-      <li>
-        <img src="./assets/sql.png" />
-        <span class="description">SQL</span>
-      </li>
-      <li>
-        <img src="./assets/nestjs.png" />
-        <span class="description">NestJS</span>
-      </li>
-      <li>
-        <img src="./assets/angular.png" />
-        <span class="description">Angular</span>
-      </li>
-      <li>
-        <img src="./assets/firebase.png" />
-        <span class="description">Firebase</span>
-      </li>
-      <li>
-        <img src="./assets/docker.svg" />
-        <span class="description">Docker</span>
-      </li>
-    </ul>
+    <div animateOnScroll class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 gradient-text">Tecnologías & Habilidades</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Stack tecnológico completo que utilizo para desarrollar soluciones robustas, escalables
+        y seguras en diversos dominios de aplicación.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div
+        *ngFor="let cat of skillCategories; let i = index"
+        animateOnScroll [animDelay]="i * 100"
+        class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow"
+      >
+        <div class="flex items-center mb-6">
+          <div class="h-1 w-12 rounded-full mr-4" [style.background]="cat.gradient"></div>
+          <h3 class="text-xl font-bold">{{ cat.title }}</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span
+            *ngFor="let skill of cat.skills"
+            class="px-4 py-2 text-sm bg-gray-100 hover:bg-purple-100 rounded-full transition-colors cursor-default"
+          >
+            {{ skill }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-gray-600">🚀 En constante aprendizaje y actualización de habilidades técnicas</p>
+    </div>
+
   </div>
-</div>
+</section>

@@ -1,55 +1,59 @@
-<div class="container">
-  <div class="seccion">
-    <div class="centered-container">
-      <h3 class="Icon">
-        <fa-icon [icon]="faPeopleGroup"></fa-icon> Experience
-      </h3>
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+
+    <div animateOnScroll class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 gradient-text">Experiencia Profesional</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Mi trayectoria profesional abarca proyectos gubernamentales, universitarios y freelance,
+        donde he aplicado mis conocimientos para crear soluciones tecnológicas innovadoras.
+      </p>
     </div>
 
-    <div class="productos-container">
-      <div *ngFor="let experience of experiences" class="producto">
-        <div class="info">
-          <h2>{{ experience.title }}</h2>
-        </div>
+    <div class="relative">
+      <!-- Timeline line -->
+      <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-200 via-blue-200 to-purple-200"></div>
 
-        <div class="carousel-container" *ngIf="experience.slides.length > 0">
-          <p class="slide-desc">
-            {{ experience.slides[currentSlide[experience.id]]?.description }}
-          </p>
-          <div class="media-wrapper">
-            <video
-              *ngIf="experience.slides[currentSlide[experience.id]]?.isVideo"
-              [src]="experience.slides[currentSlide[experience.id]]?.img"
-              controls
-              class="carousel-media"
-            ></video>
-            <img
-              *ngIf="!experience.slides[currentSlide[experience.id]]?.isVideo"
-              [src]="experience.slides[currentSlide[experience.id]]?.img"
-              alt="slide"
-              class="carousel-img"
-            />
+      <div class="space-y-12">
+        <div
+          *ngFor="let exp of experiences; let i = index"
+          animateOnScroll
+          [animDelay]="i * 100"
+          [animDir]="i % 2 === 0 ? 'left' : 'right'"
+          [class]="i % 2 === 0 ? 'relative md:w-1/2 md:pr-8' : 'relative md:w-1/2 md:pl-8 md:ml-auto'"
+        >
+          <!-- Timeline dot -->
+          <div class="hidden md:block absolute top-6 w-4 h-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 ring-4 ring-white"
+               [style.left]="i % 2 === 0 ? 'auto' : '-8px'"
+               [style.right]="i % 2 === 0 ? '-8px' : 'auto'">
           </div>
 
-          <div class="carousel-controls">
-            <button
-              (click)="prevSlide(experience.id, experience.slides.length)"
-            >
-              ◀
-            </button>
-            <span>
-              {{ currentSlide[experience.id] + 1 }}/{{
-                experience.slides.length
-              }}
-            </span>
-            <button
-              (click)="nextSlide(experience.id, experience.slides.length)"
-            >
-              ▶
-            </button>
+          <!-- Card -->
+          <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow border-l-4 border-purple-600 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-gradient-to-r from-purple-100 to-blue-100 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                <fa-icon [icon]="faBriefcase" class="text-purple-600 text-lg"></fa-icon>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold mb-1">{{ exp.role }}</h3>
+                <p class="text-purple-600 font-medium mb-2">{{ exp.company }}</p>
+                <div class="flex items-center gap-2 text-sm text-gray-500">
+                  <fa-icon [icon]="faCalendar" class="text-xs"></fa-icon>
+                  <span>{{ exp.period }}</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-gray-600 mb-4 text-sm">{{ exp.description }}</p>
+
+            <ul class="space-y-1">
+              <li *ngFor="let a of exp.achievements" class="flex items-start text-sm text-gray-700">
+                <span class="text-purple-600 mr-2 font-bold">✓</span>{{ a }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
+
   </div>
-</div>
+</section>

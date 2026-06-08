@@ -8,6 +8,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import {
   faCalendarDays,
+  faChevronDown,
   faEnvelope,
   faLocationDot,
 } from '@fortawesome/free-solid-svg-icons';
@@ -18,10 +19,15 @@ import {
 })
 export class AboutComponent {
   faCalendarDays = faCalendarDays;
+  faChevronDown = faChevronDown;
   faEnvelope = faEnvelope;
   faLocationDot = faLocationDot;
   faFacebook = faFacebook;
   faLinkedin = faLinkedin;
   faGithub = faGithub;
   faInstagram = faInstagram;
+
+  scrollTo(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
 }

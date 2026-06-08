@@ -1,21 +1,40 @@
-<nav class="navbar">
-  <div class="brand">
-    <h2><span>G</span>C</h2>
+<nav class="navbar-container" [class.scrolled]="isScrolled">
+  <div class="max-w-6xl mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <button (click)="scrollToSection('inicio')" class="text-2xl font-bold gradient-text">
+        GC
+      </button>
+
+      <!-- Desktop -->
+      <div class="hidden md:flex items-center gap-6">
+        <button
+          *ngFor="let item of navItems"
+          (click)="scrollToSection(item.id)"
+          class="text-gray-700 hover:text-purple-600 transition-colors font-medium text-sm"
+        >
+          {{ item.label }}
+        </button>
+      </div>
+
+      <!-- Mobile toggle -->
+      <button class="md:hidden p-2" (click)="toggleMenu()">
+        <span class="block w-6 h-0.5 bg-gray-700 mb-1"></span>
+        <span class="block w-6 h-0.5 bg-gray-700 mb-1"></span>
+        <span class="block w-6 h-0.5 bg-gray-700"></span>
+      </button>
+    </div>
   </div>
-
-  <!-- Menú -->
-  <ul class="menu" [ngClass]="{'active': menuOpen}">
-    <li><a (click)="scrollToElement('about')">About</a></li>
-    <li><a (click)="scrollToElement('technologies')">Technologies</a></li>
-    <li><a (click)="scrollToElement('certificates')">Certificates</a></li>
-    <li><a (click)="scrollToElement('projects')">Projects</a></li>
-    <li><a (click)="scrollToElement('experience')">Experience</a></li>
-  </ul>
-
-  <!-- Botón de menú (Hamburguesa) -->
-  <button class="menu-btn" (click)="toggleMenu()">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
 </nav>
+
+<!-- Mobile menu -->
+<div *ngIf="menuOpen" class="mobile-menu">
+  <div class="flex flex-col p-4 space-y-4">
+    <button
+      *ngFor="let item of navItems"
+      (click)="scrollToSection(item.id)"
+      class="text-left text-lg font-medium text-gray-700 hover:text-purple-600 transition-colors py-2"
+    >
+      {{ item.label }}
+    </button>
+  </div>
+</div>
