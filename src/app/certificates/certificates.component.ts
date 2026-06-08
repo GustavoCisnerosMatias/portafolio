@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faAward, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faAward, faArrowUpRightFromSquare, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-certificates',
@@ -9,6 +9,17 @@ import { faAward, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-i
 export class CertificatesComponent {
   faAward = faAward;
   faExternalLink = faArrowUpRightFromSquare;
+  faXmark = faXmark;
+
+  selectedCert: { title: string; issuer: string; img: string } | null = null;
+
+  openCert(cert: { title: string; issuer: string; img: string }) {
+    this.selectedCert = cert;
+  }
+
+  closeCert() {
+    this.selectedCert = null;
+  }
 
   categories = ['Todos', 'Backend', 'DevOps', 'Hacking', 'Programming'];
   selectedCategory = 'Todos';

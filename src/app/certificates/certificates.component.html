@@ -25,8 +25,21 @@
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
         *ngFor="let cert of filteredCerts"
-        class="bg-white rounded-xl p-6 border-2 border-transparent hover:border-purple-200 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col shadow-md"
+        class="relative group overflow-hidden bg-white rounded-xl p-6 border-2 border-transparent hover:border-purple-200 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col shadow-md"
       >
+        <!-- Vista previa de la imagen al pasar el cursor, con botón para abrir el modal -->
+        <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl overflow-hidden">
+          <img [src]="cert.img" [alt]="cert.title" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3 p-4 text-center">
+            <span class="text-white text-sm font-medium">{{ cert.title }}</span>
+            <button (click)="openCert(cert)"
+              class="px-4 py-2 rounded-lg bg-white/90 text-purple-700 text-sm font-medium hover:bg-white transition-all flex items-center gap-2">
+              Ver certificado
+              <fa-icon [icon]="faExternalLink" class="text-xs"></fa-icon>
+            </button>
+          </div>
+        </div>
+
         <div class="flex items-start justify-between mb-4">
           <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" [style.background]="cert.gradient">
             <fa-icon [icon]="faAward" class="text-white text-lg"></fa-icon>
@@ -36,13 +49,34 @@
         <h3 class="font-bold mb-1 text-lg">{{ cert.title }}</h3>
         <p class="text-sm text-gray-500 mb-2">{{ cert.issuer }}</p>
         <p class="text-sm text-gray-500 flex-1">{{ cert.description }}</p>
-        <a [href]="cert.img" target="_blank"
-          class="mt-4 text-purple-600 hover:text-purple-700 text-sm font-medium flex items-center gap-2 group">
-          Ver certificado
-          <fa-icon [icon]="faExternalLink" class="group-hover:translate-x-1 transition-transform text-xs"></fa-icon>
-        </a>
       </div>
     </div>
 
   </div>
+
+  <!-- Modal con la imagen del certificado -->
+  <div *ngIf="selectedCert"
+       (click)="closeCert()"
+       class="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
+    <div (click)="$event.stopPropagation()"
+         class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+
+      <div class="flex items-start justify-between p-6 pb-0">
+        <div>
+          <h3 class="text-xl font-bold pr-4">{{ selectedCert.title }}</h3>
+          <p class="text-sm text-gray-500" *ngIf="selectedCert.issuer">{{ selectedCert.issuer }}</p>
+        </div>
+        <button (click)="closeCert()"
+                class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-all">
+          <fa-icon [icon]="faXmark"></fa-icon>
+        </button>
+      </div>
+
+      <div class="p-6">
+        <img [src]="selectedCert.img" [alt]="selectedCert.title"
+             class="w-full max-h-[70vh] object-contain rounded-lg bg-gray-100">
+      </div>
+    </div>
+  </div>
+
 </section>
