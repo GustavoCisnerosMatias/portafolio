@@ -12,8 +12,8 @@ export class NavbarComponent {
   navItems = [
     { label: 'Inicio', id: 'inicio' },
     { label: 'Sobre Mí', id: 'sobre-mi' },
-    { label: 'Proyectos', id: 'proyectos' },
     { label: 'Experiencia', id: 'experiencia' },
+    { label: 'Proyectos', id: 'proyectos' },
     { label: 'Habilidades', id: 'habilidades' },
     { label: 'Certificados', id: 'certificados' },
     { label: 'Contacto', id: 'contacto' },

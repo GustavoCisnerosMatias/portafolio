@@ -1,46 +1,83 @@
 <section class="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
   <div class="max-w-6xl mx-auto">
 
-    <div animateOnScroll class="text-center mb-16">
+    <div animateOnScroll class="text-center mb-10">
       <h2 class="text-4xl font-bold mb-4 gradient-text">Proyectos Destacados</h2>
       <p class="text-gray-600 max-w-2xl mx-auto">
         Una selección de mis trabajos más recientes en desarrollo de software. Cada proyecto representa
         un desafío único y una oportunidad de crear soluciones eficientes e innovadoras.
       </p>
-      <p class="text-gray-500 text-sm max-w-2xl mx-auto mt-4 italic">
-        Los primeros fueron productos privados —desarrollados a medida para instituciones y empresas reales—,
-        así que su código pertenece a sus dueños; pero aquí puedes ver capturas, historias y el impacto que tuvieron.
-        Los dos últimos sí son míos de principio a fin: proyectos personales, mi terreno de práctica, más antiguos
-        pero con el código abierto por si quieres curiosear cómo empecé.
-      </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      <div *ngFor="let p of projects; let i = index"
-           animateOnScroll [animDelay]="i * 100"
-           class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden flex flex-col">
-        <div class="p-6 flex-1 flex flex-col">
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span *ngFor="let tech of p.technologies"
-              class="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full">
-              {{ tech }}
-            </span>
-          </div>
-          <h3 class="text-xl font-bold mb-2">{{ p.title }}</h3>
-          <p class="text-gray-600 text-sm mb-4 flex-1">{{ p.description }}</p>
-          <p class="text-xs text-gray-400 mb-4">{{ p.period }}</p>
-          <div class="flex gap-3">
-            <button *ngIf="p.images" (click)="openProject(p)"
-              class="flex-1 text-center px-4 py-2 rounded-lg border border-gray-300 text-gray-700 text-sm hover:border-purple-400 hover:text-purple-600 transition-all flex items-center justify-center gap-2">
-              <fa-icon [icon]="faImages"></fa-icon> Ver más
-            </button>
-            <a *ngIf="p.url" [href]="p.url" target="_blank"
-              class="flex-1 text-center px-4 py-2 rounded-lg border border-gray-300 text-gray-700 text-sm hover:border-purple-400 hover:text-purple-600 transition-all flex items-center justify-center gap-2">
-              <fa-icon [icon]="faGithub"></fa-icon> Código
-            </a>
+    <!-- Proyectos privados -->
+    <div animateOnScroll class="mb-6">
+      <p class="text-sm max-w-2xl text-gray-600 italic border-l-4 border-purple-400 pl-4 py-1">
+        <span class="font-bold not-italic text-gray-800">Productos privados</span>
+        —desarrollados a medida para instituciones y empresas reales—,
+        cuyo código pertenece a sus dueños; pero aquí puedes ver
+        <span class="font-semibold not-italic text-gray-800">capturas, historias y el impacto</span>
+        que tuvieron.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <ng-container *ngFor="let p of projects; let i = index">
+        <div *ngIf="p.images"
+             animateOnScroll [animDelay]="i * 100"
+             class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden flex flex-col">
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span *ngFor="let tech of p.technologies"
+                class="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full">
+                {{ tech }}
+              </span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">{{ p.title }}</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-1 text-justify" [innerHTML]="p.description"></p>
+            <p class="text-xs text-gray-400 mb-4">{{ p.period }}</p>
+            <div class="flex gap-3">
+              <button (click)="openProject(p)"
+                class="flex-1 text-center px-4 py-2 rounded-lg border border-gray-300 text-gray-700 text-sm hover:border-purple-400 hover:text-purple-600 transition-all flex items-center justify-center gap-2">
+                <fa-icon [icon]="faImages"></fa-icon> Ver más
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </ng-container>
+    </div>
+
+    <!-- Proyectos personales -->
+    <div animateOnScroll class="mb-6">
+      <p class="text-sm max-w-2xl text-gray-600 italic border-l-4 border-purple-400 pl-4 py-1">
+        <span class="font-bold not-italic text-gray-800">Proyectos propios</span>
+        —mi terreno de práctica y experimentación—. Son más antiguos, pero el
+        <span class="font-semibold not-italic text-gray-800">código está abierto</span>
+        por si quieres curiosear cómo empecé.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <ng-container *ngFor="let p of projects; let i = index">
+        <div *ngIf="p.url"
+             animateOnScroll [animDelay]="i * 100"
+             class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden flex flex-col">
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span *ngFor="let tech of p.technologies"
+                class="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full">
+                {{ tech }}
+              </span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">{{ p.title }}</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-1 text-justify" [innerHTML]="p.description"></p>
+            <p class="text-xs text-gray-400 mb-4">{{ p.period }}</p>
+            <div class="flex gap-3">
+              <a [href]="p.url" target="_blank"
+                class="flex-1 text-center px-4 py-2 rounded-lg border border-gray-300 text-gray-700 text-sm hover:border-purple-400 hover:text-purple-600 transition-all flex items-center justify-center gap-2">
+                <fa-icon [icon]="faGithub"></fa-icon> Código
+              </a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
     </div>
 
   </div>
@@ -61,10 +98,28 @@
       </div>
 
       <div class="px-6 pt-4" *ngIf="selectedProject.images?.length">
-        <div class="relative rounded-lg overflow-hidden bg-gray-100">
-          <img [src]="selectedProject.images![currentImageIndex]"
+        <div class="relative rounded-lg overflow-hidden bg-gray-100" style="min-height:260px">
+          <!-- Skeleton (solo para imágenes) -->
+          <div *ngIf="!imgLoaded && !selectedProject.images![currentImageIndex].endsWith('.mp4')"
+               class="absolute inset-0 flex items-center justify-center bg-gray-100 animate-pulse">
+            <svg class="w-12 h-12 text-gray-300" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5M21 12V6.75A2.25 2.25 0 0018.75 4.5H5.25A2.25 2.25 0 003 6.75V21"/>
+            </svg>
+          </div>
+          <!-- Video -->
+          <video *ngIf="selectedProject.images![currentImageIndex].endsWith('.mp4')"
+                 [src]="selectedProject.images![currentImageIndex]"
+                 controls
+                 class="w-full max-h-[420px] bg-black rounded-lg">
+          </video>
+          <!-- Imagen -->
+          <img *ngIf="!selectedProject.images![currentImageIndex].endsWith('.mp4')"
+               [src]="selectedProject.images![currentImageIndex]"
                [alt]="selectedProject.title"
-               class="w-full max-h-[420px] object-contain bg-gray-100">
+               (load)="imgLoaded = true"
+               [class.opacity-0]="!imgLoaded"
+               class="w-full max-h-[420px] object-contain bg-gray-100 transition-opacity duration-300">
 
           <button *ngIf="selectedProject.images!.length > 1" (click)="prevImage()"
                   class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white shadow flex items-center justify-center text-gray-700 transition-all">
@@ -86,8 +141,8 @@
         </div>
       </div>
 
-      <div class="p-6">
-        <p class="text-gray-600 text-sm mb-4">{{ selectedProject.description }}</p>
+<div class="p-6">
+        <p class="text-gray-600 text-sm mb-4 text-justify" [innerHTML]="selectedProject.description"></p>
         <div class="flex flex-wrap gap-2 mb-2">
           <span *ngFor="let tech of selectedProject.technologies"
             class="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full">

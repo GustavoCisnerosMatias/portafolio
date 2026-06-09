@@ -148,26 +148,34 @@ HABILIDADES TÉCNICAS:
 - Scripting y automatización de datos: Python con BeautifulSoup (web scraping), Selenium (automatización de navegadores), pandas/scripts de migración masiva de datos
 - Seguridad informática: Ethical Hacking, Pentesting, Ingeniería Social, Web Hacking
 
-CERTIFICACIONES (14 certificados verificados de Platzi):
-Backend / NestJS:
+CERTIFICACIONES (18 certificados verificados):
+Backend / NestJS (Platzi):
 1. Backend with NestJS
 2. NestJS Modular Programming
 3. NestJS TypeORM
 4. NestJS MongoDB
 5. NestJS Authentication
 
-Programación / Cloud:
-6. Python Fundamentals
-7. Comprehensions, Functions & Error Handling (Python)
-8. AWS Cloud Practitioner
-9. Web Development Path (RutaDesarrolloWeb)
-10. Programming from Zero (ProgramacionCero)
+DevOps / Cloud (Platzi):
+6. AWS Cloud Practitioner
+7. Firebase con Angular 20
+8. Fundamentos de Docker
+9. Docker Avanzado
+
+Programación (Platzi / EDteam):
+10. Python Fundamentals
+11. Comprehensions, Functions & Error Handling (Python)
+12. Web Development Path (RutaDesarrolloWeb)
+13. Programming from Zero (ProgramacionCero)
 
 Hacking / Ciberseguridad:
-11. Ethical Hacking
-12. Pentesting
-13. Social Engineering
-14. Web Hacking
+14. Ethical Hacking
+15. Pentesting
+16. Social Engineering
+17. Web Hacking
+
+Testing / QA (Platzi):
+18. Fundamentos de Pruebas de Software
 
 FORMACIÓN ACADÉMICA:
 - Título: Ingeniero en Tecnologías de la Información

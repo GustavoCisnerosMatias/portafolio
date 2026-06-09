@@ -12,24 +12,28 @@ export class CertificatesComponent {
   faXmark = faXmark;
 
   selectedCert: { title: string; issuer: string; img: string } | null = null;
+  certImgLoaded = false;
 
   openCert(cert: { title: string; issuer: string; img: string }) {
     this.selectedCert = cert;
+    this.certImgLoaded = false;
   }
 
   closeCert() {
     this.selectedCert = null;
+    this.certImgLoaded = false;
   }
 
-  categories = ['Todos', 'Backend', 'DevOps', 'Hacking', 'Programming'];
+  categories = ['Todos', 'Backend', 'DevOps', 'Hacking', 'Programming', 'Testing'];
   selectedCategory = 'Todos';
 
   categoryTaglines: { [key: string]: string } = {
     'Todos': 'Cada certificado de aquí es una pieza del rompecabezas: una habilidad concreta que hoy sostiene los proyectos que construyo.',
     'Backend': 'Toda gran aplicación tiene un motor que nadie ve, pero que sostiene todo lo que sí se ve. Aquí está el mío, afinado capa por capa.',
-    'DevOps': '¿De qué sirve una aplicación brillante si se queda encerrada en mi laptop? Angular y Firebase me dieron el hosting; Docker, las cajas para llevarla a cualquier lugar sin que se rompa en el camino.',
+    'DevOps': '¿De qué sirve una aplicación brillante si se queda encerrada en mi laptop? Firebase me dio el hosting, Docker las cajas para moverla sin que se rompa, y AWS la infraestructura para escalarla sin límites.',
     'Hacking': '¿De qué me sirve construir una casa hermosa si al final no le pongo una puerta segura? Por eso estos certificados: para pensar como quien ataca y así defender mejor lo que construyo.',
-    'Programming': 'Antes de correr hay que aprender a caminar —y a probar que cada paso funciona—. Estas son las bases sobre las que construyo todo lo demás, sin atajos.',
+    'Programming': 'Antes de correr hay que aprender a caminar. Estas son las bases sobre las que construyo todo lo demás, sin atajos y sin saltarse pasos.',
+    'Testing': '¿De qué sirve escribir código si no sé que funciona? Un sistema sin pruebas es una promesa sin garantía. Aquí aprendo a firmar mis entregas con confianza.',
   };
 
   get categoryTagline(): string {
@@ -51,10 +55,10 @@ export class CertificatesComponent {
     { title: 'Web Hacking', issuer: '', category: 'Hacking', description: 'Seguridad en aplicaciones web', gradient: 'linear-gradient(to right,#7c3aed,#4f46e5)', img: './assets/hack web.jpg' },
     { title: 'Python Fundamentals', issuer: 'Platzi', category: 'Programming', description: 'Fundamentos de programación en Python', gradient: 'linear-gradient(to right,#3b82f6,#06b6d4)', img: './assets/FundamentosPy_certificado.jpg' },
     { title: 'Comprehensions, Functions & Error Handling', issuer: 'Platzi', category: 'Programming', description: 'Python avanzado y manejo de errores', gradient: 'linear-gradient(to right,#3b82f6,#06b6d4)', img: './assets/FuncionesPy_certificados.jpg' },
-    { title: 'AWS Cloud Practitioner', issuer: 'AWS', category: 'Programming', description: 'Fundamentos de AWS Cloud', gradient: 'linear-gradient(to right,#f97316,#eab308)', img: './assets/aws.jpg' },
+    { title: 'AWS Cloud Practitioner', issuer: 'Platzi', category: 'DevOps', description: 'Infraestructura cloud: cómputo, almacenamiento, redes y servicios gestionados en AWS', gradient: 'linear-gradient(to right,#f97316,#eab308)', img: './assets/aws.jpg' },
     { title: 'Web Development Path', issuer: 'EDteam', category: 'Programming', description: 'Ruta completa de desarrollo web', gradient: 'linear-gradient(to right,#22c55e,#10b981)', img: './assets/RutaDesarrolloWeb.jpeg' },
     { title: 'Programming from Zero', issuer: 'EDteam', category: 'Programming', description: 'Fundamentos de programación', gradient: 'linear-gradient(to right,#6b7280,#475569)', img: './assets/programacionCero_certificado.jpeg' },
-    { title: 'Fundamentos de Pruebas de Software', issuer: 'Platzi', category: 'Programming', description: 'Testing y aseguramiento de calidad del software', gradient: 'linear-gradient(to right,#3b82f6,#06b6d4)', img: './assets/Fundamentos de pruebas de software.jpg' },
+    { title: 'Fundamentos de Pruebas de Software', issuer: 'Platzi', category: 'Testing', description: 'Testing y aseguramiento de calidad del software', gradient: 'linear-gradient(to right,#10b981,#14b8a6)', img: './assets/Fundamentos de pruebas de software.jpg' },
   ];
 
   get filteredCerts() {

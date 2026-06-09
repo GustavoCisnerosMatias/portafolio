@@ -73,8 +73,20 @@
       </div>
 
       <div class="p-6">
-        <img [src]="selectedCert.img" [alt]="selectedCert.title"
-             class="w-full max-h-[70vh] object-contain rounded-lg bg-gray-100">
+        <div class="relative rounded-lg overflow-hidden bg-gray-100" style="min-height:280px">
+          <!-- Skeleton loading -->
+          <div *ngIf="!certImgLoaded"
+               class="absolute inset-0 flex items-center justify-center bg-gray-100 animate-pulse">
+            <svg class="w-12 h-12 text-gray-300" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5M21 12V6.75A2.25 2.25 0 0018.75 4.5H5.25A2.25 2.25 0 003 6.75V21"/>
+            </svg>
+          </div>
+          <img [src]="selectedCert.img" [alt]="selectedCert.title"
+               (load)="certImgLoaded = true"
+               [class.opacity-0]="!certImgLoaded"
+               class="w-full max-h-[70vh] object-contain rounded-lg transition-opacity duration-300">
+        </div>
       </div>
     </div>
   </div>

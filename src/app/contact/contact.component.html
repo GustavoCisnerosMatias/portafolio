@@ -8,11 +8,11 @@
       </p>
     </div>
 
-    <div class="grid md:grid-cols-1 gap-12 mb-12">
-      <!-- Info -->
+    <div class="grid md:grid-cols-2 gap-8 mb-12 items-start">
+      <!-- Info de Contacto -->
       <div>
         <h3 class="text-2xl font-bold mb-6">Información de Contacto</h3>
-        <div class="space-y-4 mb-8">
+        <div class="space-y-4">
           <div
             *ngFor="let info of contactInfo"
             class="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow flex items-center gap-4"
@@ -20,77 +20,42 @@
             <div
               class="bg-gradient-to-r from-purple-100 to-blue-100 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
             >
-              <fa-icon
-                [icon]="info.icon"
-                class="text-purple-600 text-lg"
-              ></fa-icon>
+              <fa-icon [icon]="info.icon" class="text-purple-600 text-lg"></fa-icon>
             </div>
             <div>
               <p class="text-sm text-gray-500">{{ info.label }}</p>
-              <a
-                *ngIf="info.href"
-                [href]="info.href"
-                class="font-medium text-gray-900 hover:text-purple-600 transition-colors"
-                >{{ info.value }}</a
-              >
-              <p *ngIf="!info.href" class="font-medium text-gray-900">
-                {{ info.value }}
-              </p>
+              <a *ngIf="info.href" [href]="info.href"
+                class="font-medium text-gray-900 hover:text-purple-600 transition-colors">{{ info.value }}</a>
+              <p *ngIf="!info.href" class="font-medium text-gray-900">{{ info.value }}</p>
             </div>
           </div>
         </div>
-
-        <div
-          class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8"
-        >
-          <h4 class="font-semibold mb-3">¿Por qué trabajar conmigo?</h4>
-          <ul class="space-y-2 text-sm text-gray-700">
-            <li class="flex items-start">
-              <span class="text-purple-600 mr-2">✓</span>Código limpio y bien
-              documentado
-            </li>
-            <li class="flex items-start">
-              <span class="text-purple-600 mr-2">✓</span>Experiencia en
-              proyectos gubernamentales
-            </li>
-            <li class="flex items-start">
-              <span class="text-purple-600 mr-2">✓</span>Especialización en
-              sistemas escalables
-            </li>
-            <li class="flex items-start">
-              <span class="text-purple-600 mr-2">✓</span>Formación continua en
-              nuevas tecnologías
-            </li>
-          </ul>
-        </div>
       </div>
 
-      <!-- Form -->
-      <!-- <div class="bg-white rounded-2xl shadow-md p-8">
-        <h3 class="text-2xl font-bold mb-6">Envíame un Mensaje</h3>
-        <form (ngSubmit)="onSubmit()" #f="ngForm" class="space-y-4">
-          <div>
-            <label class="block text-sm font-medium mb-2">Nombre</label>
-            <input name="name" [(ngModel)]="form.name" required placeholder="Tu nombre completo"
-              class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-purple-400 transition-colors" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-2">Email</label>
-            <input name="email" type="email" [(ngModel)]="form.email" required placeholder="tu@email.com"
-              class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-purple-400 transition-colors" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-2">Mensaje</label>
-            <textarea name="message" [(ngModel)]="form.message" required rows="6" placeholder="Cuéntame sobre tu proyecto..."
-              class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-purple-400 transition-colors resize-none"></textarea>
-          </div>
-          <button type="submit"
-            class="w-full py-3 rounded-lg text-white font-medium bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all flex items-center justify-center gap-2">
-            <fa-icon [icon]="faSend"></fa-icon> Enviar Mensaje
-          </button>
-        </form>
-      </div> -->
+      <!-- ¿Por qué trabajar conmigo? -->
+      <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 h-full">
+        <h4 class="text-2xl font-bold mb-6">¿Por qué trabajar conmigo?</h4>
+        <ul class="space-y-4 text-sm text-gray-700">
+          <li class="flex items-start gap-3">
+            <span class="text-purple-600 font-bold text-base mt-0.5">✓</span>
+            <span>Código limpio y bien documentado</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-600 font-bold text-base mt-0.5">✓</span>
+            <span>Experiencia en proyectos gubernamentales</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-600 font-bold text-base mt-0.5">✓</span>
+            <span>Especialización en sistemas escalables</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-600 font-bold text-base mt-0.5">✓</span>
+            <span>Formación continua en nuevas tecnologías</span>
+          </li>
+        </ul>
+      </div>
     </div>
+
 
     <!-- References -->
     <h3 class="text-2xl font-bold mb-6 text-center">
