@@ -24,6 +24,7 @@
               "src/favicon.ico",
               "src/favicon.svg",
               "src/robots.txt",
+              "src/llms.txt",
               "src/assets"
             ],
             "styles": [
@@ -88,6 +89,7 @@
               "src/favicon.ico",
               "src/favicon.svg",
               "src/robots.txt",
+              "src/llms.txt",
               "src/assets"
             ],
             "styles": [

@@ -1,0 +1,22 @@
+# Gustavo Cisneros — Portafolio
+
+> Portafolio profesional de Gustavo Alejandro Cisneros Matias, Ingeniero en Tecnologías de la Información de Ecuador, especializado en desarrollo full-stack, sistemas IoT y ciberseguridad.
+
+## Perfil
+
+- [Sobre mí](https://g-cisneros.web.app/#sobre-mi): experiencia profesional, trayectoria y personalidad.
+- [Experiencia](https://g-cisneros.web.app/#experiencia): historial laboral, incluyendo Ministerio de Desarrollo Humano y Ministerio de Gobierno.
+- [Contacto](https://g-cisneros.web.app/#contacto): correo, GitHub, LinkedIn y demás redes.
+
+## Proyectos
+
+- [Proyectos](https://g-cisneros.web.app/#proyectos): sistemas web, IoT y de automatización desarrollados para instituciones públicas, universitarias y empresas privadas, además de proyectos personales de código abierto.
+
+## Certificaciones
+
+- [Certificaciones](https://g-cisneros.web.app/#certificados): certificados en backend (NestJS), DevOps/Cloud, programación, testing y ciberseguridad.
+- [Informe técnico: HackTheBox — Cap](https://g-cisneros.web.app/informes/htb-cap): write-up técnico completo de la máquina "Cap" de HackTheBox, con explotación de una vulnerabilidad IDOR y escalada de privilegios a root vía Linux Capabilities (cap_setuid).
+
+## Optional
+
+- [Currículum (PDF)](https://g-cisneros.web.app/assets/CV.pdf)
