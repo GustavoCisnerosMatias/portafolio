@@ -50,6 +50,28 @@ REGLAS:
     this.initialized = true;
   }
 
+  async checkAvailability(): Promise<boolean> {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 6000);
+
+      const res = await fetch(`${API_URL}?key=${environment.geminiApiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ role: 'user', parts: [{ text: 'ping' }] }],
+          generationConfig: { maxOutputTokens: 1 }
+        }),
+        signal: controller.signal
+      });
+
+      clearTimeout(timeout);
+      return res.ok;
+    } catch {
+      return false;
+    }
+  }
+
   async sendMessage(message: string): Promise<string> {
     if (!this.initialized) await this.initChat();
 

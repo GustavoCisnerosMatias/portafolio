@@ -1,5 +1,6 @@
-<!-- Floating button -->
+<!-- Floating button: solo visible si la API respondió (o si el chat ya está abierto) -->
 <button
+  *ngIf="apiAvailable || isOpen"
   (click)="toggleChat()"
   class="chat-toggle"
   [class.open]="isOpen"

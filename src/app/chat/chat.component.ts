@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { faComments, faTimes, faPaperPlane, faRobot } from '@fortawesome/free-solid-svg-icons';
 import { GeminiService } from '../services/gemini.service';
@@ -14,7 +14,7 @@ interface Message {
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent {
+export class ChatComponent implements OnInit {
   @ViewChild('messagesContainer') messagesContainer!: ElementRef;
 
   faComments = faComments;
@@ -26,6 +26,7 @@ export class ChatComponent {
   inputText = '';
   isTyping = false;
   initialized = false;
+  apiAvailable = false;
 
   messages: Message[] = [
     {
@@ -35,6 +36,10 @@ export class ChatComponent {
   ];
 
   constructor(private gemini: GeminiService, private sanitizer: DomSanitizer) {}
+
+  ngOnInit(): void {
+    this.gemini.checkAvailability().then(ok => this.apiAvailable = ok);
+  }
 
   format(text: string): SafeHtml {
     const html = text
@@ -68,8 +73,9 @@ export class ChatComponent {
     } catch {
       this.messages[this.messages.length - 1] = {
         role: 'bot',
-        text: 'Oops, tuve un problemita técnico 😅 ¿Puedes intentarlo de nuevo?'
+        text: 'Gustavo me desactivó temporalmente 😅 Por favor, vuelve más tarde.'
       };
+      this.apiAvailable = false;
     } finally {
       this.isTyping = false;
       this.scrollAfterRender();
