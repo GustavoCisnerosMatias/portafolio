@@ -148,36 +148,45 @@ HABILIDADES TÉCNICAS:
 - Scripting y automatización de datos: Python con BeautifulSoup (web scraping), Selenium (automatización de navegadores), pandas/scripts de migración masiva de datos
 - Seguridad informática: Ethical Hacking, Pentesting, Ingeniería Social, Web Hacking. Práctica real en HackTheBox: máquina "Cap" resuelta por completo (user + root) explotando IDOR y Linux Capabilities
 
-CERTIFICACIONES (20 certificados verificados):
+CERTIFICACIONES (25 certificados verificados):
 Backend / NestJS (Platzi):
 1. Backend with NestJS
 2. NestJS Modular Programming
 3. NestJS TypeORM
 4. NestJS MongoDB
 5. NestJS Authentication
+6. NoSQL: Datos que Mueven el Futuro (UPSE / MINTEL — Laboratorio STEM): modelado de bases de datos no relacionales (MongoDB) para proyectos STEM, robótica y diseño innovador.
 
 DevOps / Cloud (Platzi):
-6. AWS Cloud Practitioner
-7. Firebase con Angular 20
-8. Fundamentos de Docker
-9. Docker Avanzado
+7. AWS Cloud Practitioner
+8. Firebase con Angular 20
+9. Fundamentos de Docker
+10. Docker Avanzado
+
+IoT / Industria:
+11. Ponente — Monitoreo ECG y Falsos Positivos (UPSE, IV Seminario FACSISTEL 2025): expositor del póster científico "Detección de Falsos Positivos y Monitoreo del Electrocardiograma", basado en VITECED, su propio sistema de monitoreo ECG en tiempo real.
+12. Taller Industrial 4.0 y 5.0 (UPSE / MINTEL — Laboratorio STEM): automatización, IoT industrial y la convergencia humano-máquina en la manufactura moderna.
 
 Programación (Platzi / EDteam):
-10. Python Fundamentals
-11. Comprehensions, Functions & Error Handling (Python)
-12. Web Development Path (RutaDesarrolloWeb)
-13. Programming from Zero (ProgramacionCero)
+13. Python Fundamentals
+14. Comprehensions, Functions & Error Handling (Python)
+15. Web Development Path (RutaDesarrolloWeb)
+16. Programming from Zero (ProgramacionCero)
 
 Hacking / Ciberseguridad:
-14. Ethical Hacking
-15. Pentesting
-16. Social Engineering
-17. Web Hacking
-18. HackTheBox — Máquina "Cap" (Root Owned): máquina Linux resuelta de punta a punta, explotando una vulnerabilidad IDOR para robar credenciales FTP en texto plano y escalando privilegios a root abusando de una mala configuración de Linux Capabilities (cap_setuid en el binario de Python). Incluye informe técnico propio publicado en el portafolio (sección Certificaciones, categoría Hacking) con el paso a paso completo, más el perfil y el certificado oficial de HackTheBox como validación.
+17. Ethical Hacking
+18. Pentesting
+19. Social Engineering
+20. Web Hacking
+21. HackTheBox — Máquina "Cap" (Root Owned): máquina Linux resuelta de punta a punta, explotando una vulnerabilidad IDOR para robar credenciales FTP en texto plano y escalando privilegios a root abusando de una mala configuración de Linux Capabilities (cap_setuid en el binario de Python). Incluye informe técnico propio publicado en el portafolio (sección Certificaciones, categoría Hacking) con el paso a paso completo, más el perfil y el certificado oficial de HackTheBox como validación.
+
+Liderazgo / Metodologías ágiles:
+22. Formador de Formadores (UPSE / MINTEL — Laboratorio STEM): taller híbrido de formación de formadores (25h) en el proyecto "Laboratorio STEM para la Innovación Educativa y Productiva".
+23. Scrum Fundamentals (CertMind, CM-SFC): certificación internacional acreditada bajo ISO 17024 en fundamentos del marco ágil Scrum.
 
 Testing / QA (Platzi):
-19. Introducción a la Automatización de Pruebas
-20. Fundamentos de Pruebas de Software
+24. Introducción a la Automatización de Pruebas
+25. Fundamentos de Pruebas de Software
 
 FORMACIÓN ACADÉMICA:
 - Título: Ingeniero en Tecnologías de la Información

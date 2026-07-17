@@ -2,7 +2,7 @@
   <div class="max-w-6xl mx-auto">
 
     <div animateOnScroll class="text-center mb-16">
-      <h2 class="text-4xl font-bold mb-4 gradient-text">Certificaciones</h2>
+      <h2 class="text-4xl font-bold mb-4 gradient-text">Certificaciones ({{ allCerts.length }})</h2>
       <p class="text-gray-600 max-w-2xl mx-auto mb-8">
         Formación continua en tecnologías modernas, seguridad informática y buenas prácticas de desarrollo.
       </p>
@@ -28,8 +28,8 @@
         class="relative group overflow-hidden bg-white rounded-xl p-6 border-2 border-transparent hover:border-purple-200 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col shadow-md"
       >
         <!-- Vista previa de la imagen al pasar el cursor, con botón para abrir el modal -->
-        <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl overflow-hidden">
-          <img [ngSrc]="cert.img" [alt]="cert.title" fill class="object-cover">
+        <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl overflow-hidden bg-gray-900">
+          <img [ngSrc]="cert.img" [alt]="cert.title" fill class="object-contain">
           <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3 p-4 text-center">
             <span class="text-white text-sm font-medium">{{ cert.title }}</span>
             <a *ngIf="cert.writeupRoute; else certBtn"
