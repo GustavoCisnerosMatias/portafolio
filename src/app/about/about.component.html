@@ -2,7 +2,7 @@
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
 
     <!-- Info -->
-    <div class="hero-left hero-info">
+    <div class="hero-left hero-info text-center md:text-left">
       <h1 class="mb-4">
         <span class="text-gray-600 block mb-2 text-xl">Hola, soy</span>
         <span class="block text-5xl font-bold gradient-text">Gustavo Cisneros</span>
@@ -10,13 +10,13 @@
       <p class="text-xl text-gray-700 mb-4">Ingeniero en Tecnologías de la Información</p>
       <p class="text-gray-600 mb-1">📍 Ecuador</p>
       <p class="text-gray-600 mb-6">🎂 22 de Diciembre 2002</p>
-      <p class="text-gray-600 mb-8 max-w-lg text-sm leading-relaxed">
+      <p class="text-gray-600 mb-8 max-w-lg text-sm leading-relaxed mx-auto md:mx-0">
         Ingeniero en Tecnologías de la Información con experiencia en desarrollo de software y soluciones tecnológicas.
         Actualmente trabajo en el Ministerio de Desarrollo Humano, participando en proyectos institucionales y
         aplicando buenas prácticas de programación, escalabilidad y rendimiento.
       </p>
 
-      <div class="flex gap-4 mb-8 flex-wrap">
+      <div class="flex gap-4 mb-8 flex-wrap justify-center md:justify-start">
         <button
           (click)="scrollTo('proyectos')"
           class="px-6 py-3 rounded-lg font-medium text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all"
@@ -30,7 +30,7 @@
         </a>
       </div>
 
-      <div class="flex gap-3">
+      <div class="flex gap-3 justify-center md:justify-start">
         <a href="https://github.com/GustavoCisnerosMatias" target="_blank"
           class="p-2 rounded-full hover:bg-purple-100 transition-colors" title="GitHub">
           <fa-icon [icon]="faGithub" class="text-gray-700 text-xl"></fa-icon>
@@ -59,9 +59,11 @@
       <div class="photo-card">
         <div class="photo-glow"></div>
         <img
-          src="./assets/lml5.png"
+          ngSrc="./assets/lml5.png"
           alt="Gustavo Cisneros"
           class="photo-img"
+          fill
+          priority
         />
       </div>
     </div>

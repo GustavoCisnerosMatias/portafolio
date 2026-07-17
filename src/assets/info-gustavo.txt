@@ -146,9 +146,9 @@ HABILIDADES TÉCNICAS:
 - DevOps: Docker, Firebase Hosting, Git, GitHub
 - IoT: Sistemas de monitoreo biomédico en tiempo real, procesamiento de señales ECG, más de 50.000 registros gestionados desde dispositivos IoT
 - Scripting y automatización de datos: Python con BeautifulSoup (web scraping), Selenium (automatización de navegadores), pandas/scripts de migración masiva de datos
-- Seguridad informática: Ethical Hacking, Pentesting, Ingeniería Social, Web Hacking
+- Seguridad informática: Ethical Hacking, Pentesting, Ingeniería Social, Web Hacking. Práctica real en HackTheBox: máquina "Cap" resuelta por completo (user + root) explotando IDOR y Linux Capabilities
 
-CERTIFICACIONES (18 certificados verificados):
+CERTIFICACIONES (20 certificados verificados):
 Backend / NestJS (Platzi):
 1. Backend with NestJS
 2. NestJS Modular Programming
@@ -173,9 +173,11 @@ Hacking / Ciberseguridad:
 15. Pentesting
 16. Social Engineering
 17. Web Hacking
+18. HackTheBox — Máquina "Cap" (Root Owned): máquina Linux resuelta de punta a punta, explotando una vulnerabilidad IDOR para robar credenciales FTP en texto plano y escalando privilegios a root abusando de una mala configuración de Linux Capabilities (cap_setuid en el binario de Python). Incluye informe técnico propio publicado en el portafolio (sección Certificaciones, categoría Hacking) con el paso a paso completo, más el perfil y el certificado oficial de HackTheBox como validación.
 
 Testing / QA (Platzi):
-18. Fundamentos de Pruebas de Software
+19. Introducción a la Automatización de Pruebas
+20. Fundamentos de Pruebas de Software
 
 FORMACIÓN ACADÉMICA:
 - Título: Ingeniero en Tecnologías de la Información

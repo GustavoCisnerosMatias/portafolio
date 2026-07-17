@@ -13,8 +13,8 @@
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
       <div *ngFor="let f of features; let i = index"
         animateOnScroll [animDelay]="i * 100"
-        class="bg-white rounded-xl p-6 border-2 border-transparent hover:border-purple-200 hover:shadow-lg transition-all">
-        <div class="bg-gradient-to-r from-purple-100 to-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+        class="bg-white rounded-xl p-6 border-2 border-transparent hover:border-purple-200 hover:shadow-lg transition-all text-center md:text-left">
+        <div class="bg-gradient-to-r from-purple-100 to-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
           <fa-icon [icon]="f.icon" class="text-purple-600 text-2xl"></fa-icon>
         </div>
         <h3 class="font-semibold mb-2">{{ f.title }}</h3>

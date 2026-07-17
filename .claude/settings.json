@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(curl -s http://localhost:4300/writeups/htb-cap -o /dev/null -w \"writeup route: %{http_code}\\\\n\")",
+      "Bash(curl -s http://localhost:4300/ -o /dev/null -w \"home route: %{http_code}\\\\n\")",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(node -e \"require.resolve\\('playwright'\\)\")",
+      "Bash(pkill -f \"ng serve\")"
     ]
   }
 }

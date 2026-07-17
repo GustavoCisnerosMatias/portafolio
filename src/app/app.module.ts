@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -17,6 +18,9 @@ import { FooterComponent } from './footer/footer.component';
 import { SobreMiComponent } from './sobre-mi/sobre-mi.component';
 import { AnimateOnScrollDirective } from './animate-on-scroll.directive';
 import { ChatComponent } from './chat/chat.component';
+import { VideoBgComponent } from './shared/video-bg/video-bg.component';
+import { HomeComponent } from './home/home.component';
+import { WriteupHtbCapComponent } from './writeups/writeup-htb-cap/writeup-htb-cap.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +35,18 @@ import { ChatComponent } from './chat/chat.component';
     FooterComponent,
     SobreMiComponent,
     AnimateOnScrollDirective,
-    ChatComponent
+    ChatComponent,
+    VideoBgComponent,
+    HomeComponent,
+    WriteupHtbCapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

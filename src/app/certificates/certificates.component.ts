@@ -40,7 +40,15 @@ export class CertificatesComponent {
     return this.categoryTaglines[this.selectedCategory] || '';
   }
 
-  allCerts = [
+  allCerts: {
+    title: string;
+    issuer: string;
+    category: string;
+    description: string;
+    gradient: string;
+    img: string;
+    writeupRoute?: string;
+  }[] = [
     { title: 'Backend with NestJS', issuer: 'Platzi', category: 'Backend', description: 'Desarrollo backend completo con NestJS', gradient: 'linear-gradient(to right,#ef4444,#ec4899)', img: './assets/BackendConNestjs_certificado.jpg' },
     { title: 'NestJS Modular Programming', issuer: 'Platzi', category: 'Backend', description: 'Programación modular con NestJS', gradient: 'linear-gradient(to right,#ef4444,#ec4899)', img: './assets/nestJS_programacionModular.jpg' },
     { title: 'NestJS TypeORM', issuer: 'Platzi', category: 'Backend', description: 'ORM y gestión de bases de datos', gradient: 'linear-gradient(to right,#ef4444,#ec4899)', img: './assets/nestJsTypeorm.jpg' },
@@ -53,11 +61,13 @@ export class CertificatesComponent {
     { title: 'Pentesting', issuer: '', category: 'Hacking', description: 'Pruebas de penetración y seguridad', gradient: 'linear-gradient(to right,#7c3aed,#4f46e5)', img: './assets/hack pentesting.jpg' },
     { title: 'Social Engineering', issuer: '', category: 'Hacking', description: 'Ingeniería social y seguridad', gradient: 'linear-gradient(to right,#7c3aed,#4f46e5)', img: './assets/hack social.jpg' },
     { title: 'Web Hacking', issuer: '', category: 'Hacking', description: 'Seguridad en aplicaciones web', gradient: 'linear-gradient(to right,#7c3aed,#4f46e5)', img: './assets/hack web.jpg' },
+    { title: 'HackTheBox — Cap (Root Owned)', issuer: 'Hack The Box', category: 'Hacking', description: 'Explotación de una vulnerabilidad IDOR y escalada de privilegios a root abusando de Linux Capabilities (cap_setuid).', gradient: 'linear-gradient(to right,#9fef00,#5ec404)', img: './assets/Cap Certificate.PNG', writeupRoute: '/informes/htb-cap' },
     { title: 'Python Fundamentals', issuer: 'Platzi', category: 'Programming', description: 'Fundamentos de programación en Python', gradient: 'linear-gradient(to right,#3b82f6,#06b6d4)', img: './assets/FundamentosPy_certificado.jpg' },
     { title: 'Comprehensions, Functions & Error Handling', issuer: 'Platzi', category: 'Programming', description: 'Python avanzado y manejo de errores', gradient: 'linear-gradient(to right,#3b82f6,#06b6d4)', img: './assets/FuncionesPy_certificados.jpg' },
     { title: 'AWS Cloud Practitioner', issuer: 'Platzi', category: 'DevOps', description: 'Infraestructura cloud: cómputo, almacenamiento, redes y servicios gestionados en AWS', gradient: 'linear-gradient(to right,#f97316,#eab308)', img: './assets/aws.jpg' },
     { title: 'Web Development Path', issuer: 'EDteam', category: 'Programming', description: 'Ruta completa de desarrollo web', gradient: 'linear-gradient(to right,#22c55e,#10b981)', img: './assets/RutaDesarrolloWeb.jpeg' },
     { title: 'Programming from Zero', issuer: 'EDteam', category: 'Programming', description: 'Fundamentos de programación', gradient: 'linear-gradient(to right,#6b7280,#475569)', img: './assets/programacionCero_certificado.jpeg' },
+    { title: 'Introducción a la Automatización de Pruebas', issuer: 'Platzi', category: 'Testing', description: 'Fundametos de pruebas automatizadas para validar software de forma rápida, repetible y confiable', gradient: 'linear-gradient(to right,#10b981,#14b8a6)', img: './assets/Automatizacion_pruebas.jpg' },
     { title: 'Fundamentos de Pruebas de Software', issuer: 'Platzi', category: 'Testing', description: 'Testing y aseguramiento de calidad del software', gradient: 'linear-gradient(to right,#10b981,#14b8a6)', img: './assets/Fundamentos de pruebas de software.jpg' },
   ];
 

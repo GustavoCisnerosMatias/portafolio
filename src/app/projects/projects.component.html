@@ -85,20 +85,29 @@
   <!-- Modal de galería del proyecto -->
   <div *ngIf="selectedProject"
        (click)="closeProject()"
-       class="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
+       class="fixed inset-0 z-50 bg-black/70 flex items-end md:items-center md:justify-center md:p-4">
     <div (click)="$event.stopPropagation()"
-         class="bg-white rounded-xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+         class="bg-white rounded-t-2xl md:rounded-xl shadow-2xl w-full md:max-w-3xl h-[85vh] flex flex-col">
 
-      <div class="flex items-start justify-between p-6 pb-0">
-        <h3 class="text-xl font-bold pr-4">{{ selectedProject.title }}</h3>
-        <button (click)="closeProject()"
-                class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-all">
-          <fa-icon [icon]="faXmark"></fa-icon>
-        </button>
+      <!-- Header fijo -->
+      <div class="flex-shrink-0">
+        <div class="flex justify-center pt-3 pb-1 md:hidden">
+          <div class="w-10 h-1 bg-gray-300 rounded-full"></div>
+        </div>
+        <div class="flex items-start justify-between px-6 pt-4 pb-0">
+          <h3 class="text-xl font-bold pr-4">{{ selectedProject.title }}</h3>
+          <button (click)="closeProject()"
+                  class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-all">
+            <fa-icon [icon]="faXmark"></fa-icon>
+          </button>
+        </div>
       </div>
 
+      <!-- Contenido desplazable -->
+      <div class="flex-1 overflow-y-auto">
+
       <div class="px-6 pt-4" *ngIf="selectedProject.images?.length">
-        <div class="relative rounded-lg overflow-hidden bg-gray-100" style="min-height:260px">
+        <div class="relative rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center h-[48vh]">
           <!-- Skeleton (solo para imágenes) -->
           <div *ngIf="!imgLoaded && !selectedProject.images![currentImageIndex].endsWith('.mp4')"
                class="absolute inset-0 flex items-center justify-center bg-gray-100 animate-pulse">
@@ -111,15 +120,16 @@
           <video *ngIf="selectedProject.images![currentImageIndex].endsWith('.mp4')"
                  [src]="selectedProject.images![currentImageIndex]"
                  controls
-                 class="w-full max-h-[420px] bg-black rounded-lg">
+                 class="w-full h-full bg-black rounded-lg">
           </video>
           <!-- Imagen -->
           <img *ngIf="!selectedProject.images![currentImageIndex].endsWith('.mp4')"
-               [src]="selectedProject.images![currentImageIndex]"
+               [ngSrc]="selectedProject.images![currentImageIndex]"
                [alt]="selectedProject.title"
                (load)="imgLoaded = true"
                [class.opacity-0]="!imgLoaded"
-               class="w-full max-h-[420px] object-contain bg-gray-100 transition-opacity duration-300">
+               fill
+               class="object-contain transition-opacity duration-300">
 
           <button *ngIf="selectedProject.images!.length > 1" (click)="prevImage()"
                   class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white shadow flex items-center justify-center text-gray-700 transition-all">
@@ -141,17 +151,19 @@
         </div>
       </div>
 
-<div class="p-6">
-        <p class="text-gray-600 text-sm mb-4 text-justify" [innerHTML]="selectedProject.description"></p>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span *ngFor="let tech of selectedProject.technologies"
-            class="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full">
-            {{ tech }}
-          </span>
+      <div class="p-6">
+          <p class="text-gray-600 text-sm mb-4 text-justify" [innerHTML]="selectedProject.description"></p>
+          <div class="flex flex-wrap gap-2 mb-2">
+            <span *ngFor="let tech of selectedProject.technologies"
+              class="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full">
+              {{ tech }}
+            </span>
+          </div>
+          <p class="text-xs text-gray-400">{{ selectedProject.period }}</p>
         </div>
-        <p class="text-xs text-gray-400">{{ selectedProject.period }}</p>
-      </div>
-    </div>
-  </div>
+
+      </div><!-- /flex-1 scrollable -->
+    </div><!-- /modal -->
+  </div><!-- /overlay -->
 
 </section>

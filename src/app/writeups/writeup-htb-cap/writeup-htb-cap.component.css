@@ -1,0 +1,16 @@
+.htb-code {
+  background: #0d1117;
+  color: #c9d1d9;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.flag-value {
+  filter: blur(6px);
+  transition: filter 0.2s ease;
+  user-select: none;
+}
+
+.flag-value.revealed {
+  filter: blur(0);
+  user-select: text;
+}
