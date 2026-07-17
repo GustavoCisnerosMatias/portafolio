@@ -6,7 +6,8 @@
       "Bash(curl -s http://localhost:4300/ -o /dev/null -w \"home route: %{http_code}\\\\n\")",
       "Bash(npx --no-install playwright --version)",
       "Bash(node -e \"require.resolve\\('playwright'\\)\")",
-      "Bash(pkill -f \"ng serve\")"
+      "Bash(pkill -f \"ng serve\")",
+      "Bash(curl -s http://localhost:4301/about -H \"Accept: text/html\" -o /tmp/about.html -w \"%{http_code}\\\\n\")"
     ]
   }
 }
