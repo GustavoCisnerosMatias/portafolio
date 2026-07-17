@@ -23,7 +23,7 @@
         IA activa
       </span>
     </div>
-    <button class="chat-close" (click)="toggleChat()">
+    <button class="chat-close" (click)="toggleChat()" aria-label="Cerrar chat">
       <fa-icon [icon]="faTimes"></fa-icon>
     </button>
   </div>
@@ -50,7 +50,7 @@
       (keydown)="onKeyDown($event)"
       [disabled]="isTyping"
     />
-    <button class="send-btn" (click)="sendMessage()" [disabled]="isTyping || !inputText.trim()">
+    <button class="send-btn" (click)="sendMessage()" [disabled]="isTyping || !inputText.trim()" aria-label="Enviar mensaje">
       <fa-icon [icon]="faPaperPlane"></fa-icon>
     </button>
   </div>

@@ -216,7 +216,8 @@ uid=1000(nathan) gid=1000(nathan) groups=1000(nathan)</pre>
             <p class="text-sm font-semibold mb-1">user.txt</p>
             <p class="text-xs text-gray-500">Flag ocultada por política de responsible disclosure de HTB — clic para revelar.</p>
           </div>
-          <code (click)="toggleFlag('user')"
+          <code (click)="toggleFlag('user')" (keydown.enter)="toggleFlag('user')"
+                role="button" tabindex="0" aria-label="Revelar flag de user.txt"
                 class="flag-value px-3 py-1.5 rounded bg-gray-900 text-green-400 text-sm cursor-pointer"
                 [class.revealed]="flagRevealed['user']">
             bb4e32e9b5e98ccbbe7181317b5f139c

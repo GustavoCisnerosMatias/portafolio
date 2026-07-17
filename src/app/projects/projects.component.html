@@ -96,7 +96,7 @@
         </div>
         <div class="flex items-start justify-between px-6 pt-4 pb-0">
           <h3 class="text-xl font-bold pr-4">{{ selectedProject.title }}</h3>
-          <button (click)="closeProject()"
+          <button (click)="closeProject()" aria-label="Cerrar"
                   class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-all">
             <fa-icon [icon]="faXmark"></fa-icon>
           </button>
@@ -131,11 +131,11 @@
                fill
                class="object-contain transition-opacity duration-300">
 
-          <button *ngIf="selectedProject.images!.length > 1" (click)="prevImage()"
+          <button *ngIf="selectedProject.images!.length > 1" (click)="prevImage()" aria-label="Imagen anterior"
                   class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white shadow flex items-center justify-center text-gray-700 transition-all">
             <fa-icon [icon]="faChevronLeft"></fa-icon>
           </button>
-          <button *ngIf="selectedProject.images!.length > 1" (click)="nextImage()"
+          <button *ngIf="selectedProject.images!.length > 1" (click)="nextImage()" aria-label="Siguiente imagen"
                   class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white shadow flex items-center justify-center text-gray-700 transition-all">
             <fa-icon [icon]="faChevronRight"></fa-icon>
           </button>
@@ -144,6 +144,7 @@
         <div class="flex justify-center gap-2 mt-3" *ngIf="selectedProject.images!.length > 1">
           <button *ngFor="let img of selectedProject.images; let i = index"
                   (click)="goToImage(i)"
+                  [attr.aria-label]="'Ir a la imagen ' + (i + 1)"
                   [class]="i === currentImageIndex
                     ? 'w-2.5 h-2.5 rounded-full bg-purple-600 transition-all'
                     : 'w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-all'">

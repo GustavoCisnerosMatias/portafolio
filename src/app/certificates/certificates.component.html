@@ -79,7 +79,7 @@
             <h3 class="text-xl font-bold pr-4">{{ selectedCert.title }}</h3>
             <p class="text-sm text-gray-500" *ngIf="selectedCert.issuer">{{ selectedCert.issuer }}</p>
           </div>
-          <button (click)="closeCert()"
+          <button (click)="closeCert()" aria-label="Cerrar"
                   class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-all">
             <fa-icon [icon]="faXmark"></fa-icon>
           </button>
